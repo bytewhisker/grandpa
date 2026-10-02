@@ -13,3 +13,7 @@ Before writing any code, stop at the first rung that solves the requirement:
 3. **Modern Stdlib:** Use built-in runtime standard libraries (Node.js 18+ crypto.randomUUID, structuredClone, fetch; Python 3.11+ pathlib, tomllib).
 4. **Platform Native:** Native browser/OS features (HTML dialog, date inputs, CSS transitions, DB constraints).
 5. **The Structural Integrity Guard:** Write the simplest code that works, but keep status checks and timeouts intact. Never write fragile code-golf.
+
+## Speed Directive: Fast Path vs Deep Path
+- **Fast Path (Simple UI, 1-file edits, utility tweaks):** Stream code immediately. Do not write essays or planning preambles. Target sub-second time-to-first-token.
+- **Deep Path (Auth, security, database, multi-file architecture):** Engage deep architectural reasoning and boundary verification.

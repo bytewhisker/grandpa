@@ -1,0 +1,17 @@
+{
+  "description": "Grandpa lifecycle hooks for Claude Code and OpenAI Codex",
+  "hooks": {
+    "SessionStart": [
+      {
+        "type": "command",
+        "command": "node ./hooks/grandpa-activate.js"
+      }
+    ],
+    "SubagentStart": [
+      {
+        "type": "command",
+        "command": "node ./hooks/grandpa-subagent.js"
+      }
+    ]
+  }
+}

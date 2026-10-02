@@ -1,0 +1,13 @@
+{
+  "id": "fs-walk-dir",
+  "title": "Recursive Directory File Collector with Depth Guard",
+  "category": "data_filesystem",
+  "difficulty": "hard",
+  "runtime": "node >= 18.0.0",
+  "expectedBehavior": [
+    "Recursive directory read",
+    "Extension filtering",
+    "Depth limitation"
+  ],
+  "maxAttempts": 3
+}

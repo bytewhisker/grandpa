@@ -1,0 +1,8 @@
+{
+  "name": "grandpa",
+  "displayName": "Grandpa: Zero-Bloat Architecture Engine",
+  "version": "1.0.0",
+  "description": "Enforces zero-bloat architecture, native standard library replacements, and production defensive safety for AI coding sessions.",
+  "publisher": "grandpa-core",
+  "icon": "../assets/banner.svg"
+}

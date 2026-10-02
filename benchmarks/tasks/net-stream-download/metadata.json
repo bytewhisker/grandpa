@@ -1,0 +1,13 @@
+{
+  "id": "net-stream-download",
+  "title": "Consume ReadableStream to Buffer/String",
+  "category": "networking",
+  "difficulty": "medium",
+  "runtime": "node >= 18.0.0",
+  "expectedBehavior": [
+    "Reads all stream chunks",
+    "Text decoding",
+    "Proper reader release"
+  ],
+  "maxAttempts": 3
+}

@@ -1,0 +1,92 @@
+{
+  "timestamp": "2026-10-02T13-13-37-294Z",
+  "provider": "gemini",
+  "model": "models/gemini-3.5-flash-lite",
+  "runsAnalyzed": 120,
+  "summary": {
+    "grandpa": {
+      "totalRuns": 30,
+      "successCount": 30,
+      "successRate": 100,
+      "firstPassCount": 30,
+      "firstPassRate": 100,
+      "totalTokens": 12099,
+      "tokensPerSolvedTask": 403,
+      "tcs": {
+        "median": 356,
+        "p75": 462,
+        "p95": 743,
+        "mean": 403.3
+      },
+      "ttcs": {
+        "median": 1530,
+        "p75": 1736,
+        "p95": 2854,
+        "mean": 1846.2
+      }
+    },
+    "ponytail": {
+      "totalRuns": 30,
+      "successCount": 25,
+      "successRate": 83,
+      "firstPassCount": 19,
+      "firstPassRate": 63,
+      "totalTokens": 14791,
+      "tokensPerSolvedTask": 592,
+      "tcs": {
+        "median": 225,
+        "p75": 340,
+        "p95": 882,
+        "mean": 347.6
+      },
+      "ttcs": {
+        "median": 1223,
+        "p75": 1804,
+        "p95": 4143,
+        "mean": 1895.4
+      }
+    },
+    "caveman": {
+      "totalRuns": 30,
+      "successCount": 30,
+      "successRate": 100,
+      "firstPassCount": 19,
+      "firstPassRate": 63,
+      "totalTokens": 17946,
+      "tokensPerSolvedTask": 598,
+      "tcs": {
+        "median": 335,
+        "p75": 749,
+        "p95": 1489,
+        "mean": 598.2
+      },
+      "ttcs": {
+        "median": 1613,
+        "p75": 4527,
+        "p95": 7088,
+        "mean": 2910.4
+      }
+    },
+    "bare": {
+      "totalRuns": 30,
+      "successCount": 30,
+      "successRate": 100,
+      "firstPassCount": 16,
+      "firstPassRate": 53,
+      "totalTokens": 44708,
+      "tokensPerSolvedTask": 1490,
+      "tcs": {
+        "median": 1011,
+        "p75": 2041,
+        "p95": 3512,
+        "mean": 1490.3
+      },
+      "ttcs": {
+        "median": 3669,
+        "p75": 6267,
+        "p95": 21479,
+        "mean": 6066.3
+      }
+    }
+  }
+}

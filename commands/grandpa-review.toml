@@ -1,0 +1,9 @@
+[command]
+name = "grandpa-review"
+description = "Review pull request or git diff for removable bloat and defensive integrity"
+prompt = """
+Review the recent changes or diff:
+1. Stop introduction of redundant packages when stdlib equivalents exist.
+2. Verify that defensive guards (validation, timeouts, error catches) have not been stripped.
+3. Suggest line-level zero-bloat optimizations.
+"""

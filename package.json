@@ -9,7 +9,10 @@
   },
   "scripts": {
     "start": "node ./bin/grandpa.js",
-    "test": "node --test"
+    "test": "node test/scanner.test.js && node test/hooks.test.js && node test/rules.test.js && node test/speed.test.js && node test/verifier.test.js && node test/router.test.js && node test/retriever.test.js",
+    "mcp": "node grandpa-mcp/index.js",
+    "benchmark": "node benchmarks/harness.js",
+    "benchmark:live": "node --env-file=.env benchmarks/live-harness.js"
   },
   "keywords": [
     "ai-agent",
@@ -35,5 +38,18 @@
   "homepage": "https://github.com/bytewhisker/grandpa#readme",
   "engines": {
     "node": ">=18.0.0"
-  }
+  },
+  "files": [
+    "bin",
+    "src",
+    "rules",
+    "skills",
+    "grandpa-mcp",
+    "assets",
+    "examples",
+    "commands",
+    "docs",
+    "LICENSE",
+    "README*.md"
+  ]
 }

@@ -1,0 +1,7 @@
+{
+  "name": "grandpa-pi-extension",
+  "version": "1.0.0",
+  "description": "Grandpa zero-bloat architecture engine for Pi AI",
+  "main": "index.js",
+  "keywords": ["grandpa", "zero-bloat", "pi-extension"]
+}

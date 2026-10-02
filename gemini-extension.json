@@ -1,0 +1,7 @@
+{
+  "name": "grandpa",
+  "version": "1.0.0",
+  "description": "Zero-bloat architecture engine for Gemini CLI and Antigravity.",
+  "skills": "./skills/grandpa/SKILL.md",
+  "rules": "./rules/grandpa.md"
+}

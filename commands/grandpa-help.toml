@@ -1,0 +1,9 @@
+[command]
+name = "grandpa-help"
+description = "Show quick reference cheatsheet for Grandpa rules, modes, and replacements"
+prompt = """
+Display Grandpa quick reference cheat sheet:
+1. Explain the 3 intensity modes: soft, balanced, hardcore.
+2. Show top package-to-stdlib replacement matrix.
+3. List key CLI tools: scan, check --strict, audit, gain.
+"""

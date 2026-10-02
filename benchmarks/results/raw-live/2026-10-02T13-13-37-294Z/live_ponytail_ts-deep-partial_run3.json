@@ -1,0 +1,23 @@
+{
+  "benchmarkVersion": "2.0.0-live",
+  "provider": "gemini",
+  "model": "models/gemini-3.5-flash-lite",
+  "strategy": "ponytail",
+  "task": "ts-deep-partial",
+  "category": "typescript",
+  "difficulty": "medium",
+  "run": 3,
+  "success": false,
+  "firstPass": false,
+  "attempts": 3,
+  "inputTokens": 96,
+  "outputTokens": 89,
+  "cachedTokens": 0,
+  "repairInputTokens": 688,
+  "repairOutputTokens": 202,
+  "totalTCS": 1075,
+  "inferenceMs": 3249,
+  "ttcsMs": null,
+  "status": "SYNTAX_ERROR",
+  "diagnostic": "import { deepMerge } from './candidate.js';\r\n         ^^^^^^^^^\r\nSyntaxError: The requested module './candidate.js' does not provide an export named 'deepMerge'\r\n\r\nNode.js v22.14.0"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "node-env-parser",
+  "title": "Type-Coercing Environment Config Loader",
+  "category": "nodejs",
+  "difficulty": "easy",
+  "runtime": "node >= 18.0.0",
+  "expectedBehavior": [
+    "Type coercion",
+    "Default fallback",
+    "Required validation"
+  ],
+  "maxAttempts": 3
+}

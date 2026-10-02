@@ -1,0 +1,6 @@
+# Aider configuration for Grandpa Zero-Bloat Architecture
+model: gpt-4o
+auto-commits: false
+read:
+  - rules/grandpa.md
+  - AGENTS.md

@@ -1,0 +1,9 @@
+[command]
+name = "grandpa-debt"
+description = "Scan codebase for grandpa: exception receipts and assess deprecation readiness"
+prompt = """
+Audit architectural debt receipts:
+1. Search all files for `// grandpa:` comments.
+2. Evaluate whether newer platform standards allow replacing any declared exceptions.
+3. Output a debt payoff plan with estimated effort and LOC impact.
+"""

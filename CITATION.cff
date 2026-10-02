@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use Grandpa or cite our empirical benchmarks on AI coding agent efficiency, please cite it as below."
+authors:
+  - family-names: "ByteWhisker"
+    given-names: "Research"
+title: "Grandpa: Battle-Tested, Zero-Bloat Architecture Engine and Multi-Agent Benchmarking Suite"
+version: 1.0.0
+date-released: 2026-10-02
+url: "https://github.com/bytewhisker/grandpa"
+keywords:
+  - "ai-agents"
+  - "software-engineering"
+  - "benchmarks"
+  - "token-efficiency"
+  - "code-quality"
+  - "mcp"

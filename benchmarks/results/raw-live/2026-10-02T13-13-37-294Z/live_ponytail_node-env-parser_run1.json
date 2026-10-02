@@ -1,0 +1,23 @@
+{
+  "benchmarkVersion": "2.0.0-live",
+  "provider": "gemini",
+  "model": "models/gemini-3.5-flash-lite",
+  "strategy": "ponytail",
+  "task": "node-env-parser",
+  "category": "nodejs",
+  "difficulty": "easy",
+  "run": 1,
+  "success": false,
+  "firstPass": false,
+  "attempts": 3,
+  "inputTokens": 127,
+  "outputTokens": 101,
+  "cachedTokens": 0,
+  "repairInputTokens": 1022,
+  "repairOutputTokens": 205,
+  "totalTCS": 1455,
+  "inferenceMs": 3493,
+  "ttcsMs": null,
+  "status": "SYNTAX_ERROR",
+  "diagnostic": "file:///tmp/grandpa-run-mD3jug/candidate.js:1\r\n`export function loadEnvConfig(e, s) { return Object.fromEntries(Object.entries(s).map(([k, {type: t, required: r, default: d}]) => [k, e[k] === undefined ? (r ? eval(`throw new Error('${k}')`) : d) : t === 'boolean' ? e[k] === 'true' : t === 'number' ? Number(e[k]) : e[k]])) }`\r\n                                                                                                                                                                        ^^^^^\r\n\r\nSyntaxError: Unexpected token 'throw'\r\n\r\nNode.js v22.14.0"
+}

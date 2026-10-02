@@ -1,0 +1,23 @@
+{
+  "benchmarkVersion": "2.0.0-live",
+  "provider": "gemini",
+  "model": "models/gemini-3.5-flash-lite",
+  "strategy": "ponytail",
+  "task": "ts-result-container",
+  "category": "typescript",
+  "difficulty": "easy",
+  "run": 5,
+  "success": false,
+  "firstPass": false,
+  "attempts": 3,
+  "inputTokens": 123,
+  "outputTokens": 84,
+  "cachedTokens": 0,
+  "repairInputTokens": 744,
+  "repairOutputTokens": 143,
+  "totalTCS": 1094,
+  "inferenceMs": 2938,
+  "ttcsMs": null,
+  "status": "SYNTAX_ERROR",
+  "diagnostic": "import { Ok, Err, isOk, unwrapOr } from './candidate.js';\r\n             ^^^\r\nSyntaxError: The requested module './candidate.js' does not provide an export named 'Err'\r\n\r\nNode.js v22.14.0"
+}

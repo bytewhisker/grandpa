@@ -1,0 +1,348 @@
+{
+  "timestamp": "2026-10-02T11-34-05-371Z",
+  "benchmarkVersion": "1.0.0",
+  "hardware": {
+    "platform": "win32",
+    "release": "10.0.19045",
+    "cpus": 6,
+    "nodeVersion": "v22.14.0"
+  },
+  "totalTasks": 25,
+  "repetitions": 5,
+  "totalRuns": 500,
+  "summary": {
+    "grandpa": {
+      "strategy": "grandpa",
+      "totalRuns": 125,
+      "successCount": 125,
+      "successRate": 100,
+      "firstPassCount": 120,
+      "firstPassRate": 96,
+      "tcs": {
+        "median": 270,
+        "p75": 298,
+        "p95": 363,
+        "mean": 279.2
+      },
+      "ttcs": {
+        "median": 74,
+        "p75": 78,
+        "p95": 143,
+        "mean": 84.6
+      },
+      "coldTtcs": {
+        "median": 74,
+        "p75": 77,
+        "p95": 136,
+        "mean": 84.3
+      },
+      "warmTtcs": {
+        "median": 74,
+        "p75": 79,
+        "p95": 144,
+        "mean": 84.7
+      },
+      "totalDependencies": 0,
+      "categories": {
+        "bugfixing": {
+          "total": 15,
+          "success": 15,
+          "successRate": 100,
+          "medianTcs": 270
+        },
+        "data_filesystem": {
+          "total": 10,
+          "success": 10,
+          "successRate": 100,
+          "medianTcs": 317
+        },
+        "networking": {
+          "total": 25,
+          "success": 25,
+          "successRate": 100,
+          "medianTcs": 270
+        },
+        "nodejs": {
+          "total": 20,
+          "success": 20,
+          "successRate": 100,
+          "medianTcs": 291
+        },
+        "frontend": {
+          "total": 15,
+          "success": 15,
+          "successRate": 100,
+          "medianTcs": 265
+        },
+        "refactoring": {
+          "total": 10,
+          "success": 10,
+          "successRate": 100,
+          "medianTcs": 242
+        },
+        "security": {
+          "total": 10,
+          "success": 10,
+          "successRate": 100,
+          "medianTcs": 273
+        },
+        "typescript": {
+          "total": 20,
+          "success": 20,
+          "successRate": 100,
+          "medianTcs": 250
+        }
+      }
+    },
+    "ponytail": {
+      "strategy": "ponytail",
+      "totalRuns": 125,
+      "successCount": 120,
+      "successRate": 96,
+      "firstPassCount": 110,
+      "firstPassRate": 88,
+      "tcs": {
+        "median": 242,
+        "p75": 270,
+        "p95": 328,
+        "mean": 246.6
+      },
+      "ttcs": {
+        "median": 75,
+        "p75": 83,
+        "p95": 147,
+        "mean": 88.6
+      },
+      "coldTtcs": {
+        "median": 74,
+        "p75": 81,
+        "p95": 145,
+        "mean": 87.9
+      },
+      "warmTtcs": {
+        "median": 75,
+        "p75": 85,
+        "p95": 147,
+        "mean": 88.8
+      },
+      "totalDependencies": 0,
+      "categories": {
+        "bugfixing": {
+          "total": 15,
+          "success": 15,
+          "successRate": 100,
+          "medianTcs": 239
+        },
+        "data_filesystem": {
+          "total": 10,
+          "success": 10,
+          "successRate": 100,
+          "medianTcs": 271
+        },
+        "networking": {
+          "total": 25,
+          "success": 20,
+          "successRate": 80,
+          "medianTcs": 271
+        },
+        "nodejs": {
+          "total": 20,
+          "success": 20,
+          "successRate": 100,
+          "medianTcs": 248
+        },
+        "frontend": {
+          "total": 15,
+          "success": 15,
+          "successRate": 100,
+          "medianTcs": 213
+        },
+        "refactoring": {
+          "total": 10,
+          "success": 10,
+          "successRate": 100,
+          "medianTcs": 218
+        },
+        "security": {
+          "total": 10,
+          "success": 10,
+          "successRate": 100,
+          "medianTcs": 228
+        },
+        "typescript": {
+          "total": 20,
+          "success": 20,
+          "successRate": 100,
+          "medianTcs": 207
+        }
+      }
+    },
+    "caveman": {
+      "strategy": "caveman",
+      "totalRuns": 125,
+      "successCount": 120,
+      "successRate": 96,
+      "firstPassCount": 110,
+      "firstPassRate": 88,
+      "tcs": {
+        "median": 196,
+        "p75": 226,
+        "p95": 259,
+        "mean": 200.7
+      },
+      "ttcs": {
+        "median": 74,
+        "p75": 83,
+        "p95": 167,
+        "mean": 91.4
+      },
+      "coldTtcs": {
+        "median": 74,
+        "p75": 81,
+        "p95": 149,
+        "mean": 89.4
+      },
+      "warmTtcs": {
+        "median": 74,
+        "p75": 83,
+        "p95": 167,
+        "mean": 91.8
+      },
+      "totalDependencies": 0,
+      "categories": {
+        "bugfixing": {
+          "total": 15,
+          "success": 15,
+          "successRate": 100,
+          "medianTcs": 194
+        },
+        "data_filesystem": {
+          "total": 10,
+          "success": 10,
+          "successRate": 100,
+          "medianTcs": 216
+        },
+        "networking": {
+          "total": 25,
+          "success": 20,
+          "successRate": 80,
+          "medianTcs": 220
+        },
+        "nodejs": {
+          "total": 20,
+          "success": 20,
+          "successRate": 100,
+          "medianTcs": 197
+        },
+        "frontend": {
+          "total": 15,
+          "success": 15,
+          "successRate": 100,
+          "medianTcs": 170
+        },
+        "refactoring": {
+          "total": 10,
+          "success": 10,
+          "successRate": 100,
+          "medianTcs": 183
+        },
+        "security": {
+          "total": 10,
+          "success": 10,
+          "successRate": 100,
+          "medianTcs": 193
+        },
+        "typescript": {
+          "total": 20,
+          "success": 20,
+          "successRate": 100,
+          "medianTcs": 172
+        }
+      }
+    },
+    "bare": {
+      "strategy": "bare",
+      "totalRuns": 125,
+      "successCount": 125,
+      "successRate": 100,
+      "firstPassCount": 120,
+      "firstPassRate": 96,
+      "tcs": {
+        "median": 268,
+        "p75": 306,
+        "p95": 347,
+        "mean": 278.1
+      },
+      "ttcs": {
+        "median": 74,
+        "p75": 79,
+        "p95": 142,
+        "mean": 84.8
+      },
+      "coldTtcs": {
+        "median": 74,
+        "p75": 77,
+        "p95": 141,
+        "mean": 84.6
+      },
+      "warmTtcs": {
+        "median": 74,
+        "p75": 80,
+        "p95": 142,
+        "mean": 84.8
+      },
+      "totalDependencies": 0,
+      "categories": {
+        "bugfixing": {
+          "total": 15,
+          "success": 15,
+          "successRate": 100,
+          "medianTcs": 268
+        },
+        "data_filesystem": {
+          "total": 10,
+          "success": 10,
+          "successRate": 100,
+          "medianTcs": 317
+        },
+        "networking": {
+          "total": 25,
+          "success": 25,
+          "successRate": 100,
+          "medianTcs": 287
+        },
+        "nodejs": {
+          "total": 20,
+          "success": 20,
+          "successRate": 100,
+          "medianTcs": 283
+        },
+        "frontend": {
+          "total": 15,
+          "success": 15,
+          "successRate": 100,
+          "medianTcs": 250
+        },
+        "refactoring": {
+          "total": 10,
+          "success": 10,
+          "successRate": 100,
+          "medianTcs": 238
+        },
+        "security": {
+          "total": 10,
+          "success": 10,
+          "successRate": 100,
+          "medianTcs": 272
+        },
+        "typescript": {
+          "total": 20,
+          "success": 20,
+          "successRate": 100,
+          "medianTcs": 253
+        }
+      }
+    }
+  },
+  "rawDir": "E:\\Project\\grandpa\\benchmarks\\results\\raw\\2026-10-02T11-34-05-371Z"
+}

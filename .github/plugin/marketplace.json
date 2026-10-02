@@ -1,0 +1,8 @@
+{
+  "name": "grandpa",
+  "displayName": "Grandpa Architecture Guard",
+  "version": "1.0.0",
+  "description": "Zero-bloat architecture engine and code quality standard for AI coding agents.",
+  "categories": ["Architecture", "Linter", "Code Quality", "Optimization"],
+  "tags": ["zero-bloat", "stdlib", "performance", "clean-code"]
+}

@@ -1,0 +1,23 @@
+{
+  "benchmarkVersion": "2.0.0-live",
+  "provider": "gemini",
+  "model": "models/gemini-3.5-flash-lite",
+  "strategy": "grandpa",
+  "task": "refactor-date-formatter",
+  "category": "refactoring",
+  "difficulty": "easy",
+  "run": 1,
+  "success": true,
+  "firstPass": true,
+  "attempts": 1,
+  "inputTokens": 138,
+  "outputTokens": 236,
+  "cachedTokens": 0,
+  "repairInputTokens": 0,
+  "repairOutputTokens": 0,
+  "totalTCS": 374,
+  "inferenceMs": 1297,
+  "ttcsMs": 1391,
+  "status": "PASS",
+  "diagnostic": ""
+}

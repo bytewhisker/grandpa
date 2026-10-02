@@ -1,0 +1,13 @@
+{
+  "id": "bug-race-condition",
+  "title": "Async Lock / Mutex for Race Conditions",
+  "category": "bugfixing",
+  "difficulty": "medium",
+  "runtime": "node >= 18.0.0",
+  "expectedBehavior": [
+    "Mutual exclusion",
+    "Sequential queueing",
+    "Guaranteed lock release"
+  ],
+  "maxAttempts": 3
+}

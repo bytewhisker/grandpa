@@ -1,0 +1,23 @@
+{
+  "benchmarkVersion": "2.0.0-live",
+  "provider": "gemini",
+  "model": "models/gemini-3.5-flash-lite",
+  "strategy": "ponytail",
+  "task": "node-env-parser",
+  "category": "nodejs",
+  "difficulty": "easy",
+  "run": 3,
+  "success": false,
+  "firstPass": false,
+  "attempts": 3,
+  "inputTokens": 127,
+  "outputTokens": 121,
+  "cachedTokens": 0,
+  "repairInputTokens": 1121,
+  "repairOutputTokens": 244,
+  "totalTCS": 1613,
+  "inferenceMs": 3645,
+  "ttcsMs": null,
+  "status": "SYNTAX_ERROR",
+  "diagnostic": "import { loadEnvConfig } from './candidate.js';\r\n         ^^^^^^^^^^^^^\r\nSyntaxError: The requested module './candidate.js' does not provide an export named 'loadEnvConfig'\r\n\r\nNode.js v22.14.0"
+}

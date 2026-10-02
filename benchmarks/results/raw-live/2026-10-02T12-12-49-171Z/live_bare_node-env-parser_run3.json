@@ -1,0 +1,23 @@
+{
+  "benchmarkVersion": "2.0.0-live",
+  "provider": "gemini",
+  "model": "models/gemini-3.5-flash-lite",
+  "strategy": "bare",
+  "task": "node-env-parser",
+  "category": "nodejs",
+  "difficulty": "easy",
+  "run": 3,
+  "success": true,
+  "firstPass": false,
+  "attempts": 2,
+  "inputTokens": 112,
+  "outputTokens": 853,
+  "cachedTokens": 0,
+  "repairInputTokens": 1044,
+  "repairOutputTokens": 676,
+  "totalTCS": 2685,
+  "inferenceMs": 5529,
+  "ttcsMs": 6886,
+  "status": "PASS",
+  "diagnostic": ""
+}

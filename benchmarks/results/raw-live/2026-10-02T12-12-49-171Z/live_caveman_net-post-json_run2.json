@@ -1,0 +1,23 @@
+{
+  "benchmarkVersion": "2.0.0-live",
+  "provider": "gemini",
+  "model": "models/gemini-3.5-flash-lite",
+  "strategy": "caveman",
+  "task": "net-post-json",
+  "category": "networking",
+  "difficulty": "easy",
+  "run": 2,
+  "success": true,
+  "firstPass": true,
+  "attempts": 1,
+  "inputTokens": 121,
+  "outputTokens": 190,
+  "cachedTokens": 0,
+  "repairInputTokens": 0,
+  "repairOutputTokens": 0,
+  "totalTCS": 311,
+  "inferenceMs": 1409,
+  "ttcsMs": 1484,
+  "status": "PASS",
+  "diagnostic": ""
+}

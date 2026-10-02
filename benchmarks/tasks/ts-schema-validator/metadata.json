@@ -1,0 +1,14 @@
+{
+  "id": "ts-schema-validator",
+  "title": "Lightweight Schema Validator Guard",
+  "category": "typescript",
+  "difficulty": "hard",
+  "runtime": "node >= 18.0.0",
+  "expectedBehavior": [
+    "Type checking",
+    "Array validation",
+    "Null/undefined guard",
+    "Error listing"
+  ],
+  "maxAttempts": 3
+}

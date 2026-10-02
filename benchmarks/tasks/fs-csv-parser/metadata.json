@@ -1,0 +1,13 @@
+{
+  "id": "fs-csv-parser",
+  "title": "Zero-Dependency Quoted CSV Row Parser",
+  "category": "data_filesystem",
+  "difficulty": "medium",
+  "runtime": "node >= 18.0.0",
+  "expectedBehavior": [
+    "Basic comma split",
+    "Quoted field support",
+    "Escaped quote support"
+  ],
+  "maxAttempts": 3
+}

@@ -1,0 +1,13 @@
+{
+  "id": "net-fetch-timeout",
+  "title": "Fetch JSON with Timeout and Status Check",
+  "category": "networking",
+  "difficulty": "easy",
+  "runtime": "node >= 18.0.0",
+  "expectedBehavior": [
+    "HTTP 200 success",
+    "Reject on HTTP non-2xx",
+    "Pass AbortSignal for timeouts"
+  ],
+  "maxAttempts": 3
+}

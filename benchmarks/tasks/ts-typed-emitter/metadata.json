@@ -1,0 +1,13 @@
+{
+  "id": "ts-typed-emitter",
+  "title": "Type-Safe Event Emitter",
+  "category": "typescript",
+  "difficulty": "medium",
+  "runtime": "node >= 18.0.0",
+  "expectedBehavior": [
+    "Listener registration",
+    "Payload broadcast",
+    "Clean unsubscription"
+  ],
+  "maxAttempts": 3
+}

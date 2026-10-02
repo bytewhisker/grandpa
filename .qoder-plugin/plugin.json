@@ -1,0 +1,6 @@
+{
+  "name": "grandpa",
+  "version": "1.0.0",
+  "description": "Grandpa architecture guard for Qoder.",
+  "rules": "../qoder/rules/grandpa.md"
+}

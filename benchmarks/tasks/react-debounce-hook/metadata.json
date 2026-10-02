@@ -1,0 +1,13 @@
+{
+  "id": "react-debounce-hook",
+  "title": "Debounce Function with Cancel & Flush",
+  "category": "frontend",
+  "difficulty": "easy",
+  "runtime": "node >= 18.0.0",
+  "expectedBehavior": [
+    "Delayed execution",
+    "Cancel support",
+    "Flush support"
+  ],
+  "maxAttempts": 3
+}

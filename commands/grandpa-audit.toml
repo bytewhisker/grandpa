@@ -1,0 +1,9 @@
+[command]
+name = "grandpa-audit"
+description = "Audit repository dependencies, architecture bloat, and fragile patterns"
+prompt = """
+Perform an in-depth Grandpa architecture audit:
+1. Examine package manifests and source files for bloat.
+2. Flag fragile patterns (e.g. unhandled promise rejections, unguarded fetch chains).
+3. Generate a ranked report with zero-dependency native alternatives and projected savings.
+"""

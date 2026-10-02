@@ -1,0 +1,14 @@
+{
+  "id": "sec-redirect-sanitizer",
+  "title": "Open Redirect Attack Sanitizer",
+  "category": "security",
+  "difficulty": "medium",
+  "runtime": "node >= 18.0.0",
+  "expectedBehavior": [
+    "Allow safe paths",
+    "Block protocol-relative",
+    "Block javascript URI",
+    "Enforce host whitelist"
+  ],
+  "maxAttempts": 3
+}

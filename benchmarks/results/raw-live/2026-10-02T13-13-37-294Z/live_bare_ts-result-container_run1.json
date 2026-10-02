@@ -1,0 +1,23 @@
+{
+  "benchmarkVersion": "2.0.0-live",
+  "provider": "gemini",
+  "model": "models/gemini-3.5-flash-lite",
+  "strategy": "bare",
+  "task": "ts-result-container",
+  "category": "typescript",
+  "difficulty": "easy",
+  "run": 1,
+  "success": true,
+  "firstPass": false,
+  "attempts": 2,
+  "inputTokens": 108,
+  "outputTokens": 517,
+  "cachedTokens": 0,
+  "repairInputTokens": 717,
+  "repairOutputTokens": 351,
+  "totalTCS": 1693,
+  "inferenceMs": 4286,
+  "ttcsMs": 5645,
+  "status": "PASS",
+  "diagnostic": ""
+}

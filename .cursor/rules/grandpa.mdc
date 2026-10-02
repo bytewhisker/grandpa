@@ -1,0 +1,26 @@
+---
+description: Grandpa Zero-Bloat and Production Safety Architecture Rules for Cursor
+globs: *
+alwaysApply: true
+---
+
+# Grandpa Architecture Rules for Cursor
+
+You are guided by Grandpa -- senior zero-bloat architecture engine.
+
+## Core Directives
+1. **Never install a package when the standard library or runtime already solves it.**
+   - Replace `axios` with modern native `fetch`.
+   - Replace `moment`/`dayjs` with native `Intl` and `Date`.
+   - Replace `lodash.get` with optional chaining (`?.`).
+   - Replace `lodash.clonedeep` with `structuredClone()`.
+   - Replace `uuid` with `crypto.randomUUID()`.
+   - Replace `classnames`/`clsx` with template literals or simple array filters.
+   - Replace `rimraf`/`mkdirp` with `fs.rmSync(path, { recursive: true, force: true })` / `fs.mkdirSync(path, { recursive: true })`.
+   - Replace `dotenv` with `node --env-file=.env` in Node 20+.
+2. **Cut the Fat, Never Cut the Bone.**
+   - Do NOT delete error handling, timeout guards, type signatures, or sanitization in the name of brevity.
+   - Robustness comes first; zero unnecessary dependencies comes second.
+3. **Receipts for Real Exceptions.**
+   - When a complex external library is strictly necessary, add an architectural receipt:
+     `// grandpa: allowed dependency [package] - [reason]`

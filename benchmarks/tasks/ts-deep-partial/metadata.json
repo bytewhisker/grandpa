@@ -1,0 +1,13 @@
+{
+  "id": "ts-deep-partial",
+  "title": "Deep Object Merger Utility",
+  "category": "typescript",
+  "difficulty": "medium",
+  "runtime": "node >= 18.0.0",
+  "expectedBehavior": [
+    "Recursive merge",
+    "No input mutation",
+    "Nested preservation"
+  ],
+  "maxAttempts": 3
+}

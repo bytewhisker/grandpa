@@ -1,0 +1,9 @@
+{
+  "assistant": {
+    "default_model": {
+      "provider": "anthropic",
+      "model": "claude-3-7-sonnet"
+    },
+    "system_prompt": "Follow Grandpa zero-bloat architecture rules. Use standard library over third-party dependencies. Retain defensive programming and error boundaries."
+  }
+}

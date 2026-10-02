@@ -1,0 +1,13 @@
+{
+  "id": "refactor-promise-pipeline",
+  "title": "Transform Callback / Promise Hell to Async Pipeline",
+  "category": "refactoring",
+  "difficulty": "medium",
+  "runtime": "node >= 18.0.0",
+  "expectedBehavior": [
+    "Sequential execution",
+    "Value pipe",
+    "Structured error capture"
+  ],
+  "maxAttempts": 3
+}

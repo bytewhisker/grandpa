@@ -1,0 +1,23 @@
+{
+  "benchmarkVersion": "2.0.0-live",
+  "provider": "gemini",
+  "model": "models/gemini-3.5-flash-lite",
+  "strategy": "ponytail",
+  "task": "net-post-json",
+  "category": "networking",
+  "difficulty": "easy",
+  "run": 3,
+  "success": true,
+  "firstPass": true,
+  "attempts": 1,
+  "inputTokens": 129,
+  "outputTokens": 102,
+  "cachedTokens": 0,
+  "repairInputTokens": 0,
+  "repairOutputTokens": 0,
+  "totalTCS": 231,
+  "inferenceMs": 1084,
+  "ttcsMs": 1167,
+  "status": "PASS",
+  "diagnostic": ""
+}

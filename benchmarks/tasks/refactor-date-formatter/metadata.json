@@ -1,0 +1,13 @@
+{
+  "id": "refactor-date-formatter",
+  "title": "Native Intl Date Formatter (Drop Moment/Dayjs)",
+  "category": "refactoring",
+  "difficulty": "easy",
+  "runtime": "node >= 18.0.0",
+  "expectedBehavior": [
+    "Intl formatting",
+    "YYYY-MM-DD output",
+    "Null on invalid input"
+  ],
+  "maxAttempts": 3
+}

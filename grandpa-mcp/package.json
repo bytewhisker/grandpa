@@ -1,0 +1,22 @@
+{
+  "name": "@bytewhisker/grandpa-mcp",
+  "version": "1.0.0",
+  "description": "Grandpa Model Context Protocol (MCP) Server for AI Coding Agents",
+  "main": "index.js",
+  "bin": {
+    "grandpa-mcp": "index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test/instructions.test.js"
+  },
+  "keywords": [
+    "mcp",
+    "grandpa",
+    "zero-bloat",
+    "architecture",
+    "model-context-protocol"
+  ],
+  "author": "Grandpa Core Team",
+  "license": "MIT"
+}

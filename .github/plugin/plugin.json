@@ -1,0 +1,7 @@
+{
+  "name": "grandpa",
+  "version": "1.0.0",
+  "description": "Zero-bloat architecture engine and code quality standard for GitHub Copilot.",
+  "author": "Grandpa Core Team",
+  "entry": "../copilot-instructions.md"
+}

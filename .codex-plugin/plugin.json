@@ -1,0 +1,6 @@
+{
+  "name": "grandpa",
+  "version": "1.0.0",
+  "description": "Grandpa architecture engine for OpenAI Codex and CLI.",
+  "rules": "../rules/grandpa.md"
+}

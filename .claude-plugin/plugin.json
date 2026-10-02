@@ -1,0 +1,21 @@
+{
+  "name": "grandpa",
+  "version": "1.0.0",
+  "description": "Zero-bloat, battle-tested architecture engine and code quality standard for Claude Code.",
+  "main": "../skills/grandpa/SKILL.md",
+  "skills": [
+    "grandpa",
+    "grandpa-audit",
+    "grandpa-review",
+    "grandpa-debt",
+    "grandpa-guard",
+    "grandpa-migrate",
+    "grandpa-gain",
+    "grandpa-help"
+  ],
+  "hooks": {
+    "SessionStart": "../hooks/grandpa-activate.js",
+    "SubagentStart": "../hooks/grandpa-subagent.js",
+    "PreToolExecution": "../hooks/grandpa-guard-hook.js"
+  }
+}

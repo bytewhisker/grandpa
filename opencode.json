@@ -1,0 +1,17 @@
+{
+  "name": "grandpa",
+  "version": "1.0.0",
+  "plugins": [
+    "./.opencode/plugins/grandpa.mjs"
+  ],
+  "commands": {
+    "grandpa": "./.opencode/command/grandpa.md",
+    "grandpa-audit": "./.opencode/command/grandpa-audit.md",
+    "grandpa-review": "./.opencode/command/grandpa-review.md",
+    "grandpa-debt": "./.opencode/command/grandpa-debt.md",
+    "grandpa-guard": "./.opencode/command/grandpa-guard.md",
+    "grandpa-migrate": "./.opencode/command/grandpa-migrate.md",
+    "grandpa-gain": "./.opencode/command/grandpa-gain.md",
+    "grandpa-help": "./.opencode/command/grandpa-help.md"
+  }
+}

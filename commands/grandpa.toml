@@ -1,0 +1,10 @@
+[command]
+name = "grandpa"
+description = "Apply Grandpa zero-bloat architecture rules and standard library replacements"
+prompt = """
+Apply the Grandpa architecture standard to this project or pending changes.
+1. Identify any unnecessary third-party dependencies and replace them with modern standard library / runtime built-ins.
+2. Ensure defensive coding: keep error boundaries, null checks, timeouts, and validation intact.
+3. If an external package is strictly required, append an architectural receipt comment:
+   // grandpa: allowed dependency [package] - [reason]
+"""

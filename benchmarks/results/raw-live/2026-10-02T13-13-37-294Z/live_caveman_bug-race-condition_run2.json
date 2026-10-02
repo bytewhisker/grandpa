@@ -1,0 +1,23 @@
+{
+  "benchmarkVersion": "2.0.0-live",
+  "provider": "gemini",
+  "model": "models/gemini-3.5-flash-lite",
+  "strategy": "caveman",
+  "task": "bug-race-condition",
+  "category": "bugfixing",
+  "difficulty": "medium",
+  "run": 2,
+  "success": true,
+  "firstPass": true,
+  "attempts": 1,
+  "inputTokens": 81,
+  "outputTokens": 121,
+  "cachedTokens": 0,
+  "repairInputTokens": 0,
+  "repairOutputTokens": 0,
+  "totalTCS": 202,
+  "inferenceMs": 1100,
+  "ttcsMs": 1227,
+  "status": "PASS",
+  "diagnostic": ""
+}

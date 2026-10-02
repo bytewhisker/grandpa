@@ -1,0 +1,23 @@
+{
+  "benchmarkVersion": "2.0.0-live",
+  "provider": "gemini",
+  "model": "models/gemini-3.5-flash-lite",
+  "strategy": "ponytail",
+  "task": "sec-timing-safe-eq",
+  "category": "security",
+  "difficulty": "hard",
+  "run": 3,
+  "success": true,
+  "firstPass": false,
+  "attempts": 2,
+  "inputTokens": 110,
+  "outputTokens": 57,
+  "cachedTokens": 0,
+  "repairInputTokens": 321,
+  "repairOutputTokens": 63,
+  "totalTCS": 551,
+  "inferenceMs": 1918,
+  "ttcsMs": 3284,
+  "status": "PASS",
+  "diagnostic": ""
+}

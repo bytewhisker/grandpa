@@ -1,0 +1,7 @@
+{
+  "name": "grandpa",
+  "displayName": "Grandpa Zero-Bloat",
+  "version": "1.0.0",
+  "description": "Zero-bloat architecture engine for Grok coding.",
+  "promptFile": "../rules/grandpa.md"
+}

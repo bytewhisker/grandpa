@@ -1,0 +1,13 @@
+{
+  "name": "grandpa",
+  "version": "1.0.0",
+  "description": "Zero-bloat architecture engine and code quality standard for AI coding agents.",
+  "main": "src/index.js",
+  "bin": {
+    "grandpa": "bin/grandpa.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bytewhisker/grandpa.git"
+  }
+}

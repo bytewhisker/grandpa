@@ -1,0 +1,13 @@
+{
+  "id": "node-rate-limiter",
+  "title": "Sliding Window Token Bucket Rate Limiter",
+  "category": "nodejs",
+  "difficulty": "hard",
+  "runtime": "node >= 18.0.0",
+  "expectedBehavior": [
+    "Token consumption",
+    "Capacity ceiling",
+    "Continuous refill"
+  ],
+  "maxAttempts": 3
+}

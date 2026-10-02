@@ -1,0 +1,13 @@
+{
+  "id": "net-bearer-auth",
+  "title": "API Client with 401 Token Refresh",
+  "category": "networking",
+  "difficulty": "hard",
+  "runtime": "node >= 18.0.0",
+  "expectedBehavior": [
+    "Bearer header attach",
+    "Automatic 401 token refresh",
+    "Single retry attempt"
+  ],
+  "maxAttempts": 3
+}

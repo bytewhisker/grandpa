@@ -1,0 +1,13 @@
+{
+  "id": "bug-event-leak",
+  "title": "Pub-Sub Hub with Leak-Proof Disposer",
+  "category": "bugfixing",
+  "difficulty": "easy",
+  "runtime": "node >= 18.0.0",
+  "expectedBehavior": [
+    "Listener counting",
+    "Clean disposal",
+    "Zero leaks on dispose"
+  ],
+  "maxAttempts": 3
+}

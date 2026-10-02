@@ -1,0 +1,9 @@
+[command]
+name = "grandpa-gain"
+description = "Summarize total dependency, bundle size, and maintenance savings"
+prompt = """
+Calculate and display the savings achieved by Grandpa:
+1. List packages removed vs native equivalents used.
+2. Estimate total KB of bundle weight eliminated.
+3. Show clean breakdown of security vulnerability surface reduced.
+"""

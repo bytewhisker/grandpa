@@ -1,0 +1,9 @@
+[command]
+name = "grandpa-migrate"
+description = "Plan and execute package-to-native stdlib migration"
+prompt = """
+Identify target dependency to eliminate (e.g. axios, moment, lodash):
+1. Locate all call sites in the repository.
+2. Formulate drop-in native code replacements.
+3. Remove package from dependencies manifest and verify tests pass.
+"""

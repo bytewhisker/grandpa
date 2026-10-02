@@ -1,0 +1,23 @@
+{
+  "benchmarkVersion": "2.0.0-live",
+  "provider": "gemini",
+  "model": "models/gemini-3.5-flash-lite",
+  "strategy": "ponytail",
+  "task": "refactor-date-formatter",
+  "category": "refactoring",
+  "difficulty": "easy",
+  "run": 4,
+  "success": false,
+  "firstPass": false,
+  "attempts": 3,
+  "inputTokens": 112,
+  "outputTokens": 83,
+  "cachedTokens": 0,
+  "repairInputTokens": 648,
+  "repairOutputTokens": 175,
+  "totalTCS": 1018,
+  "inferenceMs": 2962,
+  "ttcsMs": null,
+  "status": "TEST_FAILURE",
+  "diagnostic": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ '1970-01-01'\n- null"
+}

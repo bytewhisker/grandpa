@@ -1,0 +1,13 @@
+{
+  "id": "node-safe-exec",
+  "title": "Safe Command Execution with Timeout",
+  "category": "nodejs",
+  "difficulty": "easy",
+  "runtime": "node >= 18.0.0",
+  "expectedBehavior": [
+    "Child process spawn",
+    "Stdout capture",
+    "Timeout handling"
+  ],
+  "maxAttempts": 3
+}

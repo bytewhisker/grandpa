@@ -1,0 +1,13 @@
+{
+  "id": "node-atomic-file",
+  "title": "Atomic JSON File Writer",
+  "category": "nodejs",
+  "difficulty": "medium",
+  "runtime": "node >= 18.0.0",
+  "expectedBehavior": [
+    "Atomic rename",
+    "JSON formatting",
+    "Cleanup on error"
+  ],
+  "maxAttempts": 3
+}

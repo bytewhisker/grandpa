@@ -1,0 +1,13 @@
+{
+  "id": "net-retry-backoff",
+  "title": "Fetch with Exponential Backoff Retry",
+  "category": "networking",
+  "difficulty": "medium",
+  "runtime": "node >= 18.0.0",
+  "expectedBehavior": [
+    "Resolve on success",
+    "Exponential retry delay",
+    "Throw on exhausted retries"
+  ],
+  "maxAttempts": 3
+}

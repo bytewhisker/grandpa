@@ -1,0 +1,4 @@
+{
+  "description": "Grandpa lifecycle hooks for Qoder",
+  "rulesFile": "./.qoder/rules/grandpa.md"
+}

@@ -1,0 +1,23 @@
+{
+  "benchmarkVersion": "2.0.0-live",
+  "provider": "gemini",
+  "model": "models/gemini-3.5-flash-lite",
+  "strategy": "grandpa",
+  "task": "net-fetch-timeout",
+  "category": "networking",
+  "difficulty": "easy",
+  "run": 2,
+  "success": true,
+  "firstPass": true,
+  "attempts": 1,
+  "inputTokens": 158,
+  "outputTokens": 153,
+  "cachedTokens": 0,
+  "repairInputTokens": 0,
+  "repairOutputTokens": 0,
+  "totalTCS": 311,
+  "inferenceMs": 1058,
+  "ttcsMs": 1141,
+  "status": "PASS",
+  "diagnostic": ""
+}

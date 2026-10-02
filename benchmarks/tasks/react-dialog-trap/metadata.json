@@ -1,0 +1,13 @@
+{
+  "id": "react-dialog-trap",
+  "title": "Modal Dialog State & Escape Key Controller",
+  "category": "frontend",
+  "difficulty": "medium",
+  "runtime": "node >= 18.0.0",
+  "expectedBehavior": [
+    "Open/close state",
+    "Escape key close",
+    "No-op on other keys"
+  ],
+  "maxAttempts": 3
+}

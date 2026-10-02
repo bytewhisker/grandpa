@@ -1,0 +1,5 @@
+{
+  "description": "Grandpa lifecycle hooks for Cursor",
+  "rulesFile": "./.cursor/rules/grandpa.mdc",
+  "statusLine": "./hooks/grandpa-statusline.sh"
+}

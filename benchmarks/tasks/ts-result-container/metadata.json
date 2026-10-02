@@ -1,0 +1,14 @@
+{
+  "id": "ts-result-container",
+  "title": "Type-Safe Result<T, E> Pattern",
+  "category": "typescript",
+  "difficulty": "easy",
+  "runtime": "node >= 18.0.0",
+  "expectedBehavior": [
+    "Ok container",
+    "Err container",
+    "isOk guard",
+    "unwrapOr default"
+  ],
+  "maxAttempts": 3
+}

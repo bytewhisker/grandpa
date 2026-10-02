@@ -1,0 +1,13 @@
+{
+  "id": "react-previous-hook",
+  "title": "Previous Value Tracker",
+  "category": "frontend",
+  "difficulty": "easy",
+  "runtime": "node >= 18.0.0",
+  "expectedBehavior": [
+    "Initial undefined",
+    "Returns previous on update",
+    "getPrevious access"
+  ],
+  "maxAttempts": 3
+}

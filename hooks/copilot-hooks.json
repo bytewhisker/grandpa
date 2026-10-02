@@ -1,0 +1,5 @@
+{
+  "description": "Grandpa lifecycle hooks for GitHub Copilot Workspace",
+  "instructions": "./skills/grandpa/SKILL.md",
+  "preCommitCheck": "node ./bin/grandpa.js check --strict"
+}

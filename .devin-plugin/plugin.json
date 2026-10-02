@@ -1,0 +1,22 @@
+{
+  "name": "grandpa",
+  "version": "1.0.0",
+  "description": "Grandpa architecture and zero-bloat safety guard for Devin.",
+  "instructions": "../skills/grandpa/SKILL.md",
+  "policy": {
+    "preferStdlib": true,
+    "requireReceiptForPackages": true,
+    "forbiddenPackages": [
+      "axios",
+      "moment",
+      "dayjs",
+      "lodash",
+      "uuid",
+      "classnames",
+      "clsx",
+      "rimraf",
+      "mkdirp",
+      "dotenv"
+    ]
+  }
+}

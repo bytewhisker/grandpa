@@ -1,0 +1,14 @@
+{
+  "id": "net-post-json",
+  "title": "HTTP POST with JSON Body and Headers",
+  "category": "networking",
+  "difficulty": "easy",
+  "runtime": "node >= 18.0.0",
+  "expectedBehavior": [
+    "POST method",
+    "JSON Content-Type",
+    "Merge headers",
+    "AbortSignal"
+  ],
+  "maxAttempts": 3
+}

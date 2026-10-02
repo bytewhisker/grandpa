@@ -3,44 +3,88 @@
 </p>
 
 <h3 align="center">
-  Battle-Tested, Zero-Bloat Architecture Engine and CLI Scanner for AI Coding Agents
+  Grandpa — Do less. Get it right.
 </h3>
 
 <p align="center">
-  <em>"Cut the fat, never cut the bone."</em>
+  <em>"Your coding agent doesn't need fewer words. It needs fewer wasted turns."</em>
+</p>
+
+<p align="center">
+  <b>SPEAK LESS • READ LESS • BUILD LESS • RETRY LESS</b>
 </p>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="License" /></a>
   <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-%3E%3D18.0.0-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node" /></a>
   <img src="https://img.shields.io/badge/Dependencies-Zero-success?style=flat-square" alt="Zero Dependencies" />
-  <img src="https://img.shields.io/badge/Works%20With-Cursor%20%7C%20Claude%20%7C%20Windsurf%20%7C%20Antigravity-orange?style=flat-square" alt="Compatibility" />
+  <img src="https://img.shields.io/badge/Benchmark-500%20Runs%20Passed-success?style=flat-square" alt="500 Runs" />
+  <img src="https://img.shields.io/badge/Supports-25%2B%20Agents-blueviolet?style=flat-square" alt="25+ Agents" />
+  <img src="https://img.shields.io/badge/MCP-Supported-black?style=flat-square" alt="MCP Server" />
+</p>
+
+<p align="center">
+  <a href="README.md"><b>English</b></a> •
+  <a href="README.es.md"><b>Español</b></a> •
+  <a href="README.ko.md"><b>한국어</b></a> •
+  <a href="README.zh.md"><b>中文</b></a>
 </p>
 
 ---
 
-### The Problem
+### Why Grandpa?
 
-Modern AI coding agents (Cursor, Claude Code, Copilot, Windsurf) have an acute design flaw: **dependency infection and architectural drift**.
+```text
+Caveman:   SPEAK LESS
+Ponytail:  BUILD LESS
+Grandpa:   WASTE LESS ACROSS THE WHOLE WORKFLOW
+```
 
-* You ask for a unique ID; the agent runs `npm install uuid`.
-* You ask for deep cloning; it pulls in `lodash.clonedeep`.
-* You ask for an API call; it installs `axios` and writes a 40-line service factory with three layers of synthetic abstractions.
+Modern AI coding agents burn tokens and waste developer time through churn:
+1. **Reading too much**: Dumps whole repositories into context when 1 file mattered.
+2. **Speaking too much**: Spits out 5-paragraph architectural essays for a 2-line CSS fix.
+3. **Building too much**: Pulls in `axios`, `uuid`, `lodash` when modern native standard library primitives exist.
+4. **Retrying too much**: "Lazy" one-line code-golf rules strip timeouts, drop `res.ok`, and skip null safety—causing runtime 500 crashes and expensive multi-turn debugging cycles.
 
-Other minimalist rulesets try to solve this by telling the AI to *"write one-liners and be lazy."* That creates a worse disaster: models skip HTTP status checks (`if (!res.ok)`), drop timeout aborts, and strip null safety, causing silent crashes in production.
+**Grandpa is not code golf.** Correctness is a hard requirement.
 
-**Grandpa solves both.**
+Grandpa minimizes **TCS (Tokens to Correct Solution)** across the whole development loop:
 
-Grandpa channels a veteran principal engineer who has been paged at 3:00 AM for fragile code. It enforces: **Cut the FAT (abstractions, dependency slop), but NEVER cut the BONE (status checks, timeouts, null safety, accessibility).**
+```text
+NORMAL AGENT
+  reads 18 files
+  loads 21K context tokens
+  adds external npm dependency
+  writes bloated patch
+  runs entire test suite
+  fails on stalled network
+  feeds huge 4,000-line error log back
+  repairs over multiple turns
+  TOTAL: 6,840 tokens | 2 attempts | 9.8 sec
+
+GRANDPA (Quick / Standard / Deep)
+  identifies relevant target file (<3 files)
+  reuses native runtime stdlib
+  generates defensive patch (status checks, timeouts preserved)
+  runs targeted isolated verification
+  PASSES on first turn & STOPS immediately
+  TOTAL: 270 tokens | 1 attempt | 74 ms
+```
 
 ---
 
-### Key Features
+### Key Pillars & What Ponytail Doesn't Have
 
-* **Zero-Dependency CLI Auditor (`npx @bytewhisker/grandpa scan`):** Automatically scans your `package.json` and codebase to identify replaceable packages and fragile code patterns.
-* **The Structural Integrity Doctrine:** Enforces standard library utilization without sacrificing production safety.
-* **Pre-Commit Git Guard (`npx @bytewhisker/grandpa hook`):** Intercepts AI coding agents when they silently attempt to stage unvetted dependencies into your repository.
-* **Multi-Agent Universal Standard:** First-class profiles for Claude Code, Cursor (`.mdc`), Windsurf (`.windsurfrules`), and Antigravity.
+| Feature | Ponytail | Grandpa Standard | Why It Matters |
+|:---|:---:|:---:|:---|
+| **Supported Agents** | 20 agents | **25+ agents** | Cursor, Windsurf, Claude Code, Copilot, Cline, Codex, Devin, Grok, Kiro, OpenClaw, OpenCode, Qoder, Antigravity, Roo Code, Aider, Zed, Continue, Pi |
+| **Architectural Skills** | 6 skills | **8 skills** | Core, Audit, Review, Debt, **Guard**, **Migrate**, Gain, Help |
+| **Active CLI Scanner** | ❌ None | **`npx grandpa scan`** | Scans real repos, grades codebases (A+ to F), catches fragile fetch patterns |
+| **Git Pre-Commit Guard** | ❌ None | **`npx grandpa hook`** | Mechanically blocks AI models from committing unapproved dependencies |
+| **MCP Server** | Basic | **Full Model Context Protocol** | Native JSON-RPC server with tools: `grandpa_scan`, `grandpa_audit`, `grandpa_guard`, `grandpa_migrate`, `grandpa_rules` |
+| **Real-Time Guard Hook** | ❌ None | **Active PreTool Hook** | Intercepts `npm install axios/lodash/uuid` commands in real time |
+| **Benchmark Suite** | LOC-only (golfing) | **Multi-dimensional** | Measures bloat, LOC, adversarial robustness, and defensive safety (92% vs 73%) |
+| **Before/After Demos** | 11 examples | **16 examples** | Real-world diffs across frontend, backend, CLI, Python, React |
 
 ---
 
@@ -97,74 +141,121 @@ Target Directory: /workspace/my-app
 | **HTTP Status Checking** | Inconsistent | ❌ Frequently stripped | **Guaranteed (`res.ok` required)** |
 | **Network Timeout Aborts** | Rarely included | ❌ Omitted | **Guaranteed (`AbortSignal.timeout`)** |
 | **Framework Awareness** | Generic | ❌ Breaks on hydration | **Next.js & React 19 safe** |
-| **Codebase Scanner CLI** | None | None | **Built-in (`npx ... scan`)** |
+| **Active CLI Scanner** | None | None | **Built-in (`npx ... scan`)** |
 | **Git Pre-Commit Guard** | None | None | **Built-in (`npx ... hook`)** |
+| **MCP Server Integration** | None | Basic | **Built-in (`npx ... mcp`)** |
 
 ---
 
-### Code Diff Comparisons
+### The 8 Specialized Skills
 
-#### 1. Fetching Data from an API Endpoint
+Grandpa includes 8 specialized skills for every stage of development:
 
-**The Fragile "Lazy" Approach (Breaks on 404/500, hangs on network drop):**
-```javascript
-// Fragile one-liner:
-const data = await fetch(url).then(r => r.json());
-```
-
-**The Grandpa Standard (5 lines, zero dependencies, completely production-safe):**
-```javascript
-// grandpa: native fetch with timeout and status verification
-const res = await fetch(url, { signal: AbortSignal.timeout(5000) });
-if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
-return res.json();
-```
+1. **`grandpa`**: Core architectural engine and decision ladder.
+2. **`grandpa-audit`**: Scans whole codebase for bloat, fragile patterns, and framework debt.
+3. **`grandpa-review`**: Line-by-line PR & diff review for unnecessary complexity.
+4. **`grandpa-debt`**: Tracks and schedules payoff of architectural exception receipts.
+5. **`grandpa-guard`**: Real-time safety guard against dangerous AI generation patterns.
+6. **`grandpa-migrate`**: Step-by-step migration plans from bloated dependencies to native stdlib.
+7. **`grandpa-gain`**: Quantifies dependencies, bundle size, and maintenance hours saved.
+8. **`grandpa-help`**: Instant cheat sheet and replacement reference table.
 
 ---
 
-#### 2. Deep Object Cloning
+### Grandpa Model Context Protocol (MCP) Server
 
-**Standard AI Bloat:**
-```javascript
-import cloneDeep from 'lodash.clonedeep';
-const copy = cloneDeep(original);
+Connect Grandpa directly to Claude Desktop, Cursor, Windsurf, or any MCP client:
+
+```json
+{
+  "mcpServers": {
+    "grandpa": {
+      "command": "npx",
+      "args": ["-y", "@bytewhisker/grandpa", "mcp"]
+    }
+  }
+}
 ```
 
-**The Grandpa Standard:**
-```javascript
-// grandpa: native runtime standard library
-const copy = structuredClone(original);
-```
+Exposes tools:
+- `grandpa_scan`: Scans repo for bloat & fragile patterns.
+- `grandpa_audit`: Returns scored codebase report (A+ to F).
+- `grandpa_guard`: Pre-execution validation of code and bash commands.
+- `grandpa_migrate`: Provides stdlib drop-in code for bloated packages.
+- `grandpa_rules`: Injects intensity-specific system instructions.
 
 ---
 
-#### 3. Generating a Unique Identifier (UUID)
+### 16 Battle-Tested Examples
 
-**Standard AI Bloat:**
-```javascript
-import { v4 as uuidv4 } from 'uuid';
-const id = uuidv4();
-```
-
-**The Grandpa Standard:**
-```javascript
-// grandpa: native crypto stdlib
-const id = crypto.randomUUID();
-```
+Browse our collection of 16 real-world before/after demonstrations in [`examples/`](examples/):
+- [Axios to Native Fetch with Timeouts & Retries](examples/axios-to-fetch.md)
+- [Moment.js to Native Intl & Date](examples/moment-to-intl.md)
+- [Lodash to Native ES6+ & structuredClone](examples/lodash-to-native.md)
+- [Classnames to Template Literals](examples/classnames-to-template.md)
+- [UUID to Web Crypto](examples/uuid-to-crypto.md)
+- [Chalk to Native ANSI](examples/chalk-to-ansi.md)
+- [Dotenv to Node 20 Flags](examples/dotenv-to-node20.md)
+- [Rimraf & Mkdirp to node:fs](examples/rimraf-mkdirp-to-fs.md)
+- [Zero-Dependency Debounce & Throttle](examples/debounce-throttle.md)
+- [Deep Clone via structuredClone](examples/deep-clone.md)
+- [Zero-Dependency CSV Parser](examples/csv-parser.md)
+- [In-Memory Token Bucket Rate Limiter](examples/rate-limiter.md)
+- [Query-String to URLSearchParams](examples/url-search-params.md)
+- [Minimal FastAPI Pattern](examples/fastapi-minimal.md)
+- [React Countdown Timer](examples/react-countdown-timer.md)
+- [Glob to Node 20 fs.readdir Recursive](examples/glob-to-fs.md)
 
 ---
 
-### The Grandpa Decision Ladder
+### Empirical Benchmark Results
 
-Before generating code, the agent climbs this 5-stage checklist:
+We benchmarked Grandpa against Ponytail, Caveman, and Bare AI across two rigorous environments: **Live Real-LLM inference** with exact provider token accounting and a **500-run multi-turn repair suite** across 25 production tasks.
 
-1. **YAGNI (You Ain't Gonna Need It):** Speculative future requirement? Skip it and state so in one line.
-2. **Codebase Check:** Does a helper, utility, or type already exist in this repository? Look before writing. Re-implementing existing code is sloppy.
-3. **Modern Stdlib:**
-   * **Node.js 18+:** Native `fetch()`, `crypto.randomUUID()`, `structuredClone()`, `URLSearchParams`, `fs.rmSync({ recursive: true })`.
-   * **Python 3.11+:** `pathlib.Path`, `tomllib`, `asyncio`.
-4. **Platform Native:** Built-in HTML (`<dialog>`, `<input type="date">`, `<details>`), CSS transitions over JS libraries, and database constraints over duplicate application logic.
-5. **The Structural Integrity Guard:** Write the cleanest code that works, but keep status checks and timeouts intact. Never write fragile code-golf.
+---
+
+#### 1. Live Real-LLM Benchmark (Google Gemini Live API)
+
+*Evaluated live with real provider token accounting (`prompt_tokens`, `completion_tokens`), real model network latency, isolated subprocess execution, and automated multi-turn repair loops.*
+
+| Strategy | Success Rate (Gate) | 1st-Pass Rate | Median TCS | p75 TCS | Failure-Aware Efficiency<br>*(Tokens / Solved Task)* | Median TTCS |
+|:---|---:|---:|---:|---:|---:|---:|
+| **Grandpa (Quick)** | **100.0%** (30/30) | **100.0%** (30/30) | 356 t | **462 t** | **403 t / solved** | 1,530 ms |
+| **Ponytail** | 83.3% (25/30) | 63.3% (19/30) | **225 t** | 340 t | 592 t / solved | **1,223 ms** |
+| **Caveman** | **100.0%** (30/30) | 63.3% (19/30) | 335 t | 749 t | 598 t / solved | 1,613 ms |
+| **Bare AI (Vanilla)** | **100.0%** (30/30) | 53.3% (16/30) | 1,011 t | 2,041 t | 1,490 t / solved | 3,669 ms |
+
+$$\text{Failure-Aware Efficiency} = \frac{\text{Total Tokens Consumed Across Entire Workflow}}{\text{Tasks Successfully Solved}}$$
+
+> **Why Grandpa Wins the Workflow:**  
+> Minimalist "code-golf" approaches look cheap on turn 1, but frequently strip status checks, timeouts, or clean exports—causing **37% first-pass failure rates** on real LLMs. Multi-turn repair loops rapidly burn tokens.  
+> **Grandpa achieves 100% first-pass pass rate** with standard defensive guards, saving **~32% total workflow tokens** over Ponytail/Caveman and **73%** over unsteered Bare AI.
+
+---
+
+#### 2. Comprehensive 500-Run Suite (25 Tasks × 5 Repetitions)
+
+*Data source: 500 isolated runs across 8 software engineering domains recorded in [`benchmarks/results/latest-summary.json`](benchmarks/results/latest-summary.json).*
+
+| Strategy | Success Rate | First-Pass Rate | Median TCS | p75 TCS | p95 TCS | Median TTCS | Dependencies Added |
+|:---|---:|---:|---:|---:|---:|---:|---:|
+| **Grandpa** | **100.0%** | **96.0%** | 270 t | 298 t | 363 t | 74 ms | **0** |
+| **Ponytail** | 96.0% | 88.0% | 242 t | 270 t | 328 t | 75 ms | 0 |
+| **Caveman** | 96.0% | 88.0% | **196 t** | **226 t** | **259 t** | 74 ms | 0 |
+| **Bare AI (Vanilla)** | **100.0%** | **96.0%** | 268 t | 306 t | 347 t | 74 ms | 0 |
+
+> *"Output tokens are cheap. Debugging turns aren't. Grandpa optimizes the whole coding loop."*
+
+See complete methodology, per-task breakdowns, and failure analysis in [`benchmarks/REPORT.md`](benchmarks/REPORT.md).
+
+Run the benchmarks:
+```bash
+# Run 500-run comprehensive suite
+npm run benchmark
+
+# Run live real-LLM benchmark (requires API key in .env)
+node --env-file=.env benchmarks/live-harness.js
+```
 
 ---
 
@@ -175,8 +266,8 @@ Before generating code, the agent climbs this 5-stage checklist:
 npx @bytewhisker/grandpa scan
 ```
 
-#### 2. Install Rules Into Your Workspace
-Installs configurations for Cursor, Windsurf, and Claude Code/Antigravity in one command:
+#### 2. Install Rules Into Your Workspace (25+ Agents)
+Installs configurations for Cursor, Windsurf, Claude Code, Antigravity, and 20+ other agents in one command:
 ```bash
 npx @bytewhisker/grandpa init
 ```
@@ -186,29 +277,6 @@ Blocks AI coding assistants from silently adding unvetted dependencies to `packa
 ```bash
 npx @bytewhisker/grandpa hook
 ```
-
----
-
-### Manual Agent Configuration
-
-#### For Cursor
-Grandpa is provided in the modern Cursor Rules format. Place the rule inside `.cursor/rules/grandpa.mdc`:
-```yaml
----
-description: "Grandpa - Zero-bloat, battle-tested engineering standard"
-alwaysApply: true
----
-```
-*(Copy the full specification from [`rules/grandpa.md`](rules/grandpa.md)).*
-
-#### For Claude Code
-Add the skill to your Claude Code workspace:
-```bash
-npx @bytewhisker/grandpa init
-```
-
-#### For Antigravity
-Place `rules/grandpa.md` into your workspace customization root under `.agents/rules/grandpa.md`.
 
 ---
 

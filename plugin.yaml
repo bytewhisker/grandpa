@@ -1,0 +1,16 @@
+name: grandpa
+version: 1.0.0
+description: Zero-bloat architecture engine and code quality standard for AI coding agents.
+author: Grandpa Core Team
+homepage: https://github.com/bytewhisker/grandpa
+rules:
+  - rules/grandpa.md
+skills:
+  - skills/grandpa/SKILL.md
+  - skills/grandpa-audit/SKILL.md
+  - skills/grandpa-review/SKILL.md
+  - skills/grandpa-debt/SKILL.md
+  - skills/grandpa-guard/SKILL.md
+  - skills/grandpa-migrate/SKILL.md
+  - skills/grandpa-gain/SKILL.md
+  - skills/grandpa-help/SKILL.md

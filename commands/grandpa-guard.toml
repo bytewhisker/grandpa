@@ -1,0 +1,9 @@
+[command]
+name = "grandpa-guard"
+description = "Real-time safety guard against dangerous AI generation patterns"
+prompt = """
+Inspect current generation context:
+1. Ensure network calls include timeout and response status checking.
+2. Confirm user inputs are strictly validated.
+3. Catch hydration mismatches, unhandled async states, and prototype leaks before committing.
+"""

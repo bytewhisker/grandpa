@@ -1,0 +1,14 @@
+{
+  "id": "sec-timing-safe-eq",
+  "title": "Constant-Time String Comparison",
+  "category": "security",
+  "difficulty": "hard",
+  "runtime": "node >= 18.0.0",
+  "expectedBehavior": [
+    "Equality match",
+    "Mismatch detection",
+    "Different length safety",
+    "Native crypto"
+  ],
+  "maxAttempts": 3
+}

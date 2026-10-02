@@ -1,0 +1,23 @@
+{
+  "benchmarkVersion": "2.0.0-live",
+  "provider": "gemini",
+  "model": "models/gemini-3.5-flash-lite",
+  "strategy": "ponytail",
+  "task": "react-debounce-hook",
+  "category": "frontend",
+  "difficulty": "easy",
+  "run": 5,
+  "success": true,
+  "firstPass": false,
+  "attempts": 2,
+  "inputTokens": 91,
+  "outputTokens": 89,
+  "cachedTokens": 0,
+  "repairInputTokens": 219,
+  "repairOutputTokens": 90,
+  "totalTCS": 489,
+  "inferenceMs": 2253,
+  "ttcsMs": 3611,
+  "status": "PASS",
+  "diagnostic": ""
+}

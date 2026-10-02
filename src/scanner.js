@@ -3,6 +3,30 @@ import path from 'node:path';
 
 // Known bloat packages with native modern alternatives
 export const BLOAT_DATABASE = {
+  'axios': {
+    category: 'HTTP',
+    native: 'fetch()',
+    minNode: '18.0+',
+    reason: 'Native standard global fetch supported in Node 18+ and all modern browsers.'
+  },
+  'moment': {
+    category: 'Date',
+    native: 'Intl.DateTimeFormat / Date',
+    minNode: 'All',
+    reason: 'Standard ECMAScript Internationalization API.'
+  },
+  'dayjs': {
+    category: 'Date',
+    native: 'Intl.DateTimeFormat / Date',
+    minNode: 'All',
+    reason: 'Standard ECMAScript Internationalization API.'
+  },
+  'lodash': {
+    category: 'Utilities',
+    native: 'Standard ES6+ methods & structuredClone()',
+    minNode: 'All',
+    reason: 'Native JavaScript Array/Object methods and structuredClone.'
+  },
   'uuid': {
     category: 'Crypto',
     native: 'crypto.randomUUID()',
@@ -160,7 +184,7 @@ export function scanProject(projectDir = process.cwd()) {
 function scanSourceFiles(dir, results, depth = 0) {
   if (depth > 6) return;
 
-  const ignoreList = new Set(['node_modules', '.git', 'dist', 'build', '.next', 'out', 'coverage', '.cache']);
+  const ignoreList = new Set(['node_modules', '.git', 'dist', 'build', '.next', 'out', 'coverage', '.cache', 'benchmarks', 'fixtures']);
 
   try {
     const entries = fs.readdirSync(dir, { withFileTypes: true });

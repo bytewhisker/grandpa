@@ -1,0 +1,11 @@
+{
+  "models": [],
+  "customCommands": [
+    {
+      "name": "grandpa",
+      "prompt": "Refactor this code according to Grandpa zero-bloat architecture rules. Replace unnecessary dependencies with native standard library methods, keeping defensive safety and error handling intact.",
+      "description": "Apply Grandpa architecture rules"
+    }
+  ],
+  "systemMessage": "Follow Grandpa zero-bloat architecture rules: cut the fat, never cut the bone. Prefer standard library to third-party dependencies."
+}

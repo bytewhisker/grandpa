@@ -1,0 +1,13 @@
+{
+  "id": "bug-pagination-bounds",
+  "title": "Defensive Pagination Bounds Calculation",
+  "category": "bugfixing",
+  "difficulty": "easy",
+  "runtime": "node >= 18.0.0",
+  "expectedBehavior": [
+    "Offset clamping",
+    "0 items handling",
+    "Page boundary normalization"
+  ],
+  "maxAttempts": 3
+}

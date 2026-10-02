@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import fs from 'node:fs';
 import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
@@ -11,7 +12,19 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const args = process.argv.slice(2);
-const command = args[0] || 'scan';
+let command = args[0] || 'scan';
+
+// If first arg is a flag, parse it
+if (command.startsWith('-')) {
+  if (command === '-v' || command === '--version') {
+    command = 'version';
+  } else if (command === '-h' || command === '--help') {
+    command = 'help';
+  } else {
+    // Flag passed without command (e.g., grandpa --strict or grandpa --json) -> default to scan
+    command = 'scan';
+  }
+}
 
 // ANSI color helpers
 const c = {
@@ -64,44 +77,85 @@ function printBanner() {
   console.log(` ${D}Version 1.0.0 · Engineered by Mahadi (@bytewhisker)${R}`);
 }
 
+// 1. Version Flag
+if (command === 'version' || args.includes('--version') || args.includes('-v')) {
+  console.log('Grandpa CLI v1.0.0');
+  process.exit(0);
+}
+
+// 2. Help Command & Flags
 if (command === 'help' || args.includes('--help') || args.includes('-h')) {
   printBanner();
   console.log(`
 ${c.bold}USAGE:${c.reset}
+  grandpa <command> [options]
   npx @bytewhisker/grandpa <command> [options]
 
 ${c.bold}COMMANDS:${c.reset}
-  ${c.green}scan${c.reset}        Scan current project for dependency & code bloat (default)
-  ${c.green}init${c.reset}        Install Grandpa rules (.cursor, .windsurf, AGENTS.md, etc.)
-  ${c.green}hook${c.reset}        Install git pre-commit guard to block AI dependency injection
-  ${c.green}mcp${c.reset}         Start the Grandpa Model Context Protocol (MCP) server
-  ${c.green}gain${c.reset}        Display cumulative dependency, size, and maintenance savings
-  ${c.green}help${c.reset}        Display this guide
+  ${c.green}scan [path]${c.reset}       Scan project for dependency bloat & fragile code (default)
+  ${c.green}init [target]${c.reset}     Install zero-bloat AI rules (.cursor, .windsurf, AGENTS.md)
+                      ${c.dim}Targets: all (default), cursor, windsurf, agents${c.reset}
+  ${c.green}hook${c.reset}              Install git pre-commit guard to block AI dependency injection
+  ${c.green}mcp${c.reset}               Start the Grandpa Model Context Protocol (MCP) server
+  ${c.green}gain${c.reset}              Display cumulative dependency, size, and maintenance savings
+  ${c.green}version${c.reset}           Display current CLI version
+  ${c.green}help${c.reset}              Display this guide
 
 ${c.bold}OPTIONS:${c.reset}
-  --strict    Exit with non-zero code if any bloat or fragile code is detected
-  --json      Output raw JSON results for CI/CD automation
+  ${c.cyan}-h, --help${c.reset}        Show help information
+  ${c.cyan}-v, --version${c.reset}     Show version number
+  ${c.cyan}--strict${c.reset}          Exit with code 1 if bloat or fragile code is detected (CI/CD)
+  ${c.cyan}--json${c.reset}            Output raw JSON results for CI/CD automation & tooling
+
+${c.bold}EXAMPLES:${c.reset}
+  ${c.dim}# Quick scan current project${c.reset}
+  grandpa
+
+  ${c.dim}# Scan a specific directory${c.reset}
+  grandpa scan ./my-project
+
+  ${c.dim}# Fail in CI/CD pipeline if unvetted bloat or fragile code exists${c.reset}
+  grandpa scan --strict
+
+  ${c.dim}# Output pure JSON results for tooling${c.reset}
+  grandpa scan --json
+
+  ${c.dim}# Install Cursor rules only (.cursor/rules/grandpa.mdc)${c.reset}
+  grandpa init cursor
+
+  ${c.dim}# Protect repository before commits${c.reset}
+  grandpa hook
+
+  ${c.dim}# Start MCP server for Cursor or Claude Desktop${c.reset}
+  grandpa mcp
 `);
   process.exit(0);
 }
 
+// 3. MCP Server
 if (command === 'mcp') {
   const mcpServerPath = path.resolve(__dirname, '../grandpa-mcp/index.js');
   const child = spawn(process.execPath, [mcpServerPath], {
     stdio: 'inherit'
   });
   child.on('exit', (code) => process.exit(code || 0));
-  // Keep process alive while MCP server runs
-} else if (command === 'init') {
+}
+
+// 4. Init Rules
+else if (command === 'init') {
   printBanner();
-  console.log(`\n${c.bold}Installing Grandpa AI Agent Rules...${c.reset}`);
-  const installed = installRules(process.cwd());
+  const formatArg = args.slice(1).find((a) => !a.startsWith('-')) || 'all';
+  console.log(`\n${c.bold}Installing Grandpa AI Agent Rules [Target: ${formatArg}]...${c.reset}`);
+  const installed = installRules(process.cwd(), formatArg);
   for (const file of installed) {
     console.log(`  ${c.green}✓${c.reset} Created ${c.cyan}${file}${c.reset}`);
   }
-  console.log(`\n${c.green}${c.bold}Success:${c.reset} Cursor, Windsurf, Claude, and 20+ agents will now enforce zero-bloat architecture.\n`);
+  console.log(`\n${c.green}${c.bold}Success:${c.reset} Configured ${installed.length} rule file(s). Zero-bloat standards enforced.\n`);
   process.exit(0);
-} else if (command === 'hook') {
+}
+
+// 5. Pre-commit Hook
+else if (command === 'hook') {
   printBanner();
   try {
     const hookPath = installPreCommitHook(process.cwd());
@@ -112,7 +166,10 @@ if (command === 'mcp') {
     process.exit(1);
   }
   process.exit(0);
-} else if (command === 'gain') {
+}
+
+// 6. Gain Metrics
+else if (command === 'gain') {
   printBanner();
   console.log(`\n${c.bold}Grandpa Quantified Architecture Savings:${c.reset}\n`);
   console.log(`  ${c.green}• Bloat Packages Defended:${c.reset} 16 major npm libraries`);
@@ -120,17 +177,38 @@ if (command === 'mcp') {
   console.log(`  ${c.green}• Transitive Dependencies:${c.reset} ~420 packages eliminated`);
   console.log(`  ${c.green}• CVE Surface Reduction:${c.reset}   94% lower supply chain attack surface\n`);
   process.exit(0);
-} else {
-  // Default: scan
+}
+
+// 7. Scan (or target directory)
+else {
+  let targetPath = process.cwd();
+
+  if (command === 'scan') {
+    const pathArg = args.slice(1).find((a) => !a.startsWith('-'));
+    if (pathArg) {
+      targetPath = path.resolve(process.cwd(), pathArg);
+    }
+  } else if (fs.existsSync(path.resolve(process.cwd(), command))) {
+    // User passed a path directly: grandpa ./some-path
+    targetPath = path.resolve(process.cwd(), command);
+  } else {
+    // Unknown command
+    printBanner();
+    console.error(`\n  ${c.red}Error:${c.reset} Unknown command "${command}".\n`);
+    console.log(`  Run ${c.cyan}grandpa --help${c.reset} to see all available commands and options.\n`);
+    process.exit(1);
+  }
+
+  // Handle JSON output mode
   if (args.includes('--json')) {
-    const results = scanProject(process.cwd());
+    const results = scanProject(targetPath);
     console.log(JSON.stringify(results, null, 2));
     process.exit(results.bloatFound.length > 0 && args.includes('--strict') ? 1 : 0);
   }
 
   printBanner();
-  console.log(`\n${c.bold}Target Directory:${c.reset} ${process.cwd()}`);
-  const results = scanProject(process.cwd());
+  console.log(`\n${c.bold}Target Directory:${c.reset} ${targetPath}`);
+  const results = scanProject(targetPath);
 
   if (!results.hasPackageJson) {
     console.log(`${c.yellow}[!] No package.json found in this directory.${c.reset}`);

@@ -271,26 +271,36 @@ node --env-file=.env benchmarks/live-harness.js
 
 ### Quick Start
 
-#### 1. Audit Your Project for Bloat
-Run directly from GitHub or npm:
+#### 1. Install Globally (Run `grandpa` anywhere in any terminal)
 ```bash
-# Direct from GitHub (always latest)
-npx github:bytewhisker/grandpa scan
+# Install globally from GitHub (always latest)
+npm install -g github:bytewhisker/grandpa
 
-# Or via npm
-npx @bytewhisker/grandpa scan
+# Or run instantly without installing
+npx github:bytewhisker/grandpa scan
+```
+
+Once installed globally, you can type `grandpa` in any terminal:
+```bash
+grandpa --help     # Display full interactive help guide and options
+grandpa scan       # Audit project for dependency bloat & fragile code
+grandpa init       # Install zero-bloat rules for Cursor, Windsurf, Claude Code
+grandpa hook       # Install git pre-commit guard against AI dependency bloat
+grandpa mcp        # Launch Model Context Protocol server for AI assistants
+grandpa gain       # View cumulative token & architecture savings
 ```
 
 #### 2. Install Rules Into Your Workspace (25+ Agents)
-Installs configurations for Cursor, Windsurf, Claude Code, Antigravity, and 20+ other agents in one command:
+Installs configurations for Cursor (`.cursor/rules`), Windsurf (`.windsurfrules`), Claude Code, Antigravity (`AGENTS.md`), and 20+ other agents in one command:
 ```bash
-npx github:bytewhisker/grandpa init
+grandpa init
+# Or targeted: grandpa init cursor | grandpa init windsurf | grandpa init agents
 ```
 
 #### 3. Enable Git Pre-Commit Guard
 Blocks AI coding assistants from silently adding unvetted dependencies to `package.json`:
 ```bash
-npx github:bytewhisker/grandpa hook
+grandpa hook
 ```
 
 ---

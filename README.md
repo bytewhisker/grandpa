@@ -100,19 +100,20 @@ GRANDPA (Quick / Standard / Deep)
 Run Grandpa directly in any project directory:
 
 ```bash
-npx @bytewhisker/grandpa scan
+npx github:bytewhisker/grandpa scan
 ```
 
 ```text
-   ____                          _             
-  / ___|_ __ __ _ _ __   __| |_ __   __ _ 
- | |  _| '__/ _` | '_ \ / _` | '_ \ / _` |
- | |_| | | | (_| | | | | (_| | |_) | (_| |
-  \____|_|  \__,_|_| |_|\__,_| .__/ \__,_|
-                             |_|          
-  "Back in my day, we didn't install 500MB of node_modules."
-  Battle-Tested, Zero-Bloat Architecture for AI Agents
-======================================================
+┌                                                                         ┐
+  Welcome to Grandpa
+   ▄███▄  ████▄   ▄███▄  ██   ██ ████▄  ████▄   ▄███▄       ▄▄██████▄▄   
+  ██   ▀  ██  ██ ██   ██ ███  ██ ██  ██ ██  ██ ██   ██    ▄██▀██████▀██▄ 
+  ██ ▄▄▄  ████▀  ███████ ██ █ ██ ██  ██ ████▀  ███████   ██ ██▀█▄▄█▀██ ██
+  ██   ██ ██  ██ ██   ██ ██  ███ ██  ██ ██     ██   ██   ██ ██▄█▀▀█▄██ ██
+   ▀███▀  ██  ██ ██   ██ ██   ██ ████▀  ██     ██   ██    ▀██▄██████▄██▀ 
+                                                               ▀████████▀   
+└                                                     CLI Version 1.0.0 ┘
+ Version 1.0.0 · Engineered by Mahadi (@bytewhisker)
 
 Target Directory: /workspace/my-app
 
@@ -131,10 +132,11 @@ Target Directory: /workspace/my-app
     Grandpa's Native Fix: fs.rmSync(path, { recursive: true, force: true })
     Native recursive directory deletion in Node.js fs. (Supported in Node 14.14+)
 
-======================================================
-  Grandpa's Codebase Score: 55/100
-  Rating:                  C (Grandpa is Grumpy: noticeable bloat)
-======================================================
+  ┌── AUDIT SUMMARY ──────────────────────────────────────┐
+  │  Codebase Score:   55/100
+  │  Health Rating:    C (Noticeable dependency bloat)
+  │  Dependency Bloat: 3 package(s)
+  └───────────────────────────────────────────────────────┘
 ```
 
 ---

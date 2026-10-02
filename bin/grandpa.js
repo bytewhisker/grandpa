@@ -22,22 +22,46 @@ const c = {
   yellow: '\x1b[33m',
   red: '\x1b[31m',
   cyan: '\x1b[36m',
+  bCyan: '\x1b[96m',
   blue: '\x1b[34m',
-  magenta: '\x1b[35m'
+  magenta: '\x1b[35m',
+  bMagenta: '\x1b[95m',
+  white: '\x1b[97m'
 };
 
 function printBanner() {
-  console.log(`
-${c.cyan}${c.bold}   ____                          _             
-  / ___|_ __ __ _ _ __   __| |_ __   __ _ 
- | |  _| '__/ _\` | '_ \\ / _\` | '_ \\ / _\` |
- | |_| | | | (_| | | | | (_| | |_) | (_| |
-  \\____|_|  \\__,_|_| |_|\\__,_| .__/ \\__,_|
-                             |_|          ${c.reset}
-${c.bold}  GRANDPA 🧓 — AI Coding Optimizer${c.reset}
-${c.dim}  "Work smarter, not harder. Get it right."${c.reset}
-${c.dim}  Engineered by Mahadi (@bytewhisker)${c.reset}
-======================================================`);
+  const R = c.reset;
+  const C = c.bCyan;
+  const B = c.cyan;
+  const M = c.bMagenta;
+  const W = c.white;
+  const D = c.dim;
+
+  const text = [
+    `${C} ▄███▄  ${B}████▄  ${C} ▄███▄  ${B}██   ██ ${C}████▄  ${B}████▄  ${C} ▄███▄ ${R}`,
+    `${C}██   ▀  ${B}██  ██ ${C}██   ██ ${B}███  ██ ${C}██  ██ ${B}██  ██ ${C}██   ██${R}`,
+    `${C}██ ▄▄▄  ${B}████▀  ${C}███████ ${B}██ █ ██ ${C}██  ██ ${B}████▀  ${C}███████${R}`,
+    `${C}██   ██ ${B}██  ██ ${C}██   ██ ${B}██  ███ ${C}██  ██ ${B}██     ${C}██   ██${R}`,
+    `${C} ▀███▀  ${B}██  ██ ${C}██   ██ ${B}██   ██ ${C}████▀  ${B}██     ${C}██   ██${R}`
+  ];
+
+  const mascot = [
+    `   ${M}▄▄██████▄▄${R}   `,
+    ` ${M}▄██▀${C}██████${M}▀██▄${R} `,
+    `${M}██${R} ${C}██▀█${M}▄▄${C}█▀██${R} ${M}██${R}`,
+    `${M}██${R} ${C}██▄█${M}▀▀${C}█▄██${R} ${M}██${R}`,
+    ` ${M}▀██▄${W}██████${M}▄██▀${R} `,
+    `   ${W}▀████████▀${R}   `
+  ];
+
+  console.log(`\n${D}┌${' '.repeat(73)}┐${R}`);
+  console.log(`  ${W}Welcome to${R} ${C}${c.bold}Grandpa${R}`);
+  for (let i = 0; i < 5; i++) {
+    console.log(`  ${text[i]}   ${mascot[i]}`);
+  }
+  console.log(`  ${' '.repeat(55)}   ${mascot[5]}`);
+  console.log(`${D}└${' '.repeat(53)}${W}CLI Version 1.0.0${D} ┘${R}`);
+  console.log(` ${D}Version 1.0.0 · Engineered by Mahadi (@bytewhisker)${R}`);
 }
 
 if (command === 'help' || args.includes('--help') || args.includes('-h')) {
@@ -134,10 +158,15 @@ if (command === 'mcp') {
     }
   }
 
-  console.log(`${c.bold}======================================================${c.reset}`);
-  console.log(`  ${c.bold}Grandpa's Codebase Score:${c.reset} ${results.score}/100`);
-  console.log(`  ${c.bold}Rating:${c.reset}                  ${results.score >= 80 ? c.green : c.red}${results.rating}${c.reset}`);
-  console.log(`${c.bold}======================================================${c.reset}\n`);
+  const ratingColor = results.score >= 80 ? c.green : (results.score >= 60 ? c.yellow : c.red);
+  console.log(`\n  ${c.dim}┌── AUDIT SUMMARY ──────────────────────────────────────┐${c.reset}`);
+  console.log(`  ${c.dim}│${c.reset}  ${c.bold}Codebase Score:${c.reset}   ${ratingColor}${c.bold}${results.score}/100${c.reset}`);
+  console.log(`  ${c.dim}│${c.reset}  ${c.bold}Health Rating:${c.reset}    ${ratingColor}${results.rating}${c.reset}`);
+  console.log(`  ${c.dim}│${c.reset}  ${c.bold}Dependency Bloat:${c.reset} ${results.bloatFound.length === 0 ? c.green + '✓ Zero bloat' : c.yellow + results.bloatFound.length + ' package(s)'}${c.reset}`);
+  if (results.fragileCodeFound.length > 0) {
+    console.log(`  ${c.dim}│${c.reset}  ${c.bold}Fragile Patterns:${c.reset} ${c.red + results.fragileCodeFound.length + ' issue(s) detected' + c.reset}`);
+  }
+  console.log(`  ${c.dim}└───────────────────────────────────────────────────────┘${c.reset}\n`);
 
   if (args.includes('--strict') && (results.bloatFound.length > 0 || results.fragileCodeFound.length > 0)) {
     console.log(`${c.red}CI Failure: Codebase violates Grandpa zero-bloat standards.${c.reset}\n`);

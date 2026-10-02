@@ -24,6 +24,7 @@
   <img src="https://img.shields.io/badge/Benchmark-100%25%20First--Pass%20(Live)-success?style=flat-square" alt="Live Benchmark" />
   <img src="https://img.shields.io/badge/Supports-25%2B%20Agents-blueviolet?style=flat-square" alt="25+ Agents" />
   <img src="https://img.shields.io/badge/MCP-Supported-black?style=flat-square" alt="MCP Server" />
+  <a href="https://github.com/sponsors/bytewhisker"><img src="https://img.shields.io/badge/Sponsor-%E2%9D%A4-pink?style=flat-square&logo=github-sponsors" alt="Sponsor" /></a>
 </p>
 
 <p align="center">

@@ -2,23 +2,26 @@
   <img src="assets/banner.svg" width="100%" alt="Grandpa Banner" />
 </p>
 
-<h3 align="center">
-  Grandpa — Do less. Get it right.
-</h3>
+<h2 align="center">
+  GRANDPA 🧓 — The Efficiency Layer for AI Coding Agents
+</h2>
 
 <p align="center">
-  <em>"Your coding agent doesn't need fewer words. It needs fewer wasted turns."</em>
+  <b>Grandpa makes AI coding agents work smarter, not harder.</b><br>
+  <em>Grandpa optimizes the entire path from idea to working code — using fewer tokens, fewer retries, and zero bloat.</em>
 </p>
 
 <p align="center">
-  <b>SPEAK LESS • READ LESS • BUILD LESS • RETRY LESS</b>
+  <a href="#quick-start"><b>Try Grandpa Free</b></a> •
+  <a href="#empirical-benchmark-results"><b>View Live Benchmark</b></a> •
+  <a href="https://github.com/bytewhisker/grandpa"><b>GitHub Repo</b></a>
 </p>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="License" /></a>
   <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-%3E%3D18.0.0-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node" /></a>
   <img src="https://img.shields.io/badge/Dependencies-Zero-success?style=flat-square" alt="Zero Dependencies" />
-  <img src="https://img.shields.io/badge/Benchmark-500%20Runs%20Passed-success?style=flat-square" alt="500 Runs" />
+  <img src="https://img.shields.io/badge/Benchmark-100%25%20First--Pass%20(Live)-success?style=flat-square" alt="Live Benchmark" />
   <img src="https://img.shields.io/badge/Supports-25%2B%20Agents-blueviolet?style=flat-square" alt="25+ Agents" />
   <img src="https://img.shields.io/badge/MCP-Supported-black?style=flat-square" alt="MCP Server" />
 </p>
@@ -34,21 +37,25 @@
 
 ### Why Grandpa?
 
-```text
-Caveman:   SPEAK LESS
-Ponytail:  BUILD LESS
-Grandpa:   WASTE LESS ACROSS THE WHOLE WORKFLOW
-```
+> **Your AI coding agent is powerful. But it wastes too much.**
 
-Modern AI coding agents burn tokens and waste developer time through churn:
-1. **Reading too much**: Dumps whole repositories into context when 1 file mattered.
+Every time you give a prompt to Claude Code, Cursor, Windsurf, Devin, or GitHub Copilot, you are paying in tokens and latency for four invisible forms of waste:
+
+1. **Reading too much**: Dumps entire repositories into prompt context when a single file mattered.
 2. **Speaking too much**: Spits out 5-paragraph architectural essays for a 2-line CSS fix.
-3. **Building too much**: Pulls in `axios`, `uuid`, `lodash` when modern native standard library primitives exist.
+3. **Building too much**: Pulls in bloated third-party npm packages (`axios`, `lodash`, `uuid`) when modern native runtime primitives exist.
 4. **Retrying too much**: "Lazy" one-line code-golf rules strip timeouts, drop `res.ok`, and skip null safety—causing runtime 500 crashes and expensive multi-turn debugging cycles.
 
 **Grandpa is not code golf.** Correctness is a hard requirement.
 
-Grandpa minimizes **TCS (Tokens to Correct Solution)** across the whole development loop:
+Grandpa minimizes **TCS (Tokens to Correct Solution)** across the whole development loop by giving your coding agent four simple instincts:
+
+```text
+SPEAK LESS  → Precise, zero-chatter code generation
+READ LESS   → Relevance-bounded context retrieval (<3 files)
+BUILD LESS  → Native standard library primitives first (Zero npm bloat)
+RETRY LESS  → Hardened production safeguards (res.ok, timeouts, null checks)
+```
 
 ```text
 NORMAL AGENT
@@ -262,20 +269,25 @@ node --env-file=.env benchmarks/live-harness.js
 ### Quick Start
 
 #### 1. Audit Your Project for Bloat
+Run directly from GitHub or npm:
 ```bash
+# Direct from GitHub (always latest)
+npx github:bytewhisker/grandpa scan
+
+# Or via npm
 npx @bytewhisker/grandpa scan
 ```
 
 #### 2. Install Rules Into Your Workspace (25+ Agents)
 Installs configurations for Cursor, Windsurf, Claude Code, Antigravity, and 20+ other agents in one command:
 ```bash
-npx @bytewhisker/grandpa init
+npx github:bytewhisker/grandpa init
 ```
 
 #### 3. Enable Git Pre-Commit Guard
 Blocks AI coding assistants from silently adding unvetted dependencies to `package.json`:
 ```bash
-npx @bytewhisker/grandpa hook
+npx github:bytewhisker/grandpa hook
 ```
 
 ---
@@ -297,7 +309,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npx @bytewhisker/grandpa scan --strict
+      - run: npx github:bytewhisker/grandpa scan --strict
 ```
 
 ---
@@ -308,7 +320,17 @@ Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
 
 ---
 
-### Author
+### Author & Credits
 
-Developed by **[ByteWhisker](https://github.com/bytewhisker)**  
-*Creative Systems Architect and Open Source Tooling Engineer*
+```text
+╭──────────────────────────╮
+│  GRANDPA 🧓              │
+│  AI Coding Optimizer     │
+│                          │
+│  Engineered by Mahadi    │
+│  @bytewhisker            │
+╰──────────────────────────╯
+```
+
+Designed & engineered by **[Mahadi](https://github.com/bytewhisker)** ([@bytewhisker](https://github.com/bytewhisker))  
+*© 2026 Grandpa / ByteWhisker. All rights reserved.*

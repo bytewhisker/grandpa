@@ -34,8 +34,9 @@ ${c.cyan}${c.bold}   ____                          _
  | |_| | | | (_| | | | | (_| | |_) | (_| |
   \\____|_|  \\__,_|_| |_|\\__,_| .__/ \\__,_|
                              |_|          ${c.reset}
-${c.dim}  "Back in my day, we didn't install 500MB of node_modules."${c.reset}
-${c.dim}  Battle-Tested, Zero-Bloat Architecture for AI Agents${c.reset}
+${c.bold}  GRANDPA 🧓 — AI Coding Optimizer${c.reset}
+${c.dim}  "Work smarter, not harder. Get it right."${c.reset}
+${c.dim}  Engineered by Mahadi (@bytewhisker)${c.reset}
 ======================================================`);
 }
 

@@ -1,0 +1,39 @@
+{
+  "name": "@bytewhisker/grandpa",
+  "version": "1.0.0",
+  "description": "Battle-tested, zero-bloat architecture engine and CLI scanner for AI coding agents.",
+  "type": "module",
+  "main": "./src/index.js",
+  "bin": {
+    "grandpa": "./bin/grandpa.js"
+  },
+  "scripts": {
+    "start": "node ./bin/grandpa.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "ai-agent",
+    "claude-code",
+    "cursor",
+    "cursor-rules",
+    "antigravity",
+    "anti-bloat",
+    "linter",
+    "yagni",
+    "zero-dependency",
+    "code-quality"
+  ],
+  "author": "ByteWhisker (https://github.com/bytewhisker)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bytewhisker/grandpa.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bytewhisker/grandpa/issues"
+  },
+  "homepage": "https://github.com/bytewhisker/grandpa#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

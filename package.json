@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node ./bin/grandpa.js",
-    "test": "node test/scanner.test.js && node test/hooks.test.js && node test/rules.test.js && node test/speed.test.js && node test/verifier.test.js && node test/router.test.js && node test/retriever.test.js",
+    "test": "node test/scanner.test.js && node test/hooks.test.js && node test/rules.test.js && node test/speed.test.js && node test/verifier.test.js && node test/router.test.js && node test/retriever.test.js && node test/mcp.test.js",
     "mcp": "node grandpa-mcp/index.js",
     "benchmark": "node benchmarks/harness.js",
     "benchmark:live": "node --env-file=.env benchmarks/live-harness.js"

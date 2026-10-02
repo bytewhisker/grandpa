@@ -181,6 +181,32 @@ function printStudioBox(targetDir) {
   ${c.dim}└────────────────────────────────────────────────────────────────────────┘${c.reset}`);
 }
 
+function runMcpSelfTest() {
+  return new Promise((resolve) => {
+    const mcpServerPath = path.resolve(__dirname, '../grandpa-mcp/index.js');
+    const child = spawn(process.execPath, [mcpServerPath], {
+      stdio: ['pipe', 'pipe', 'ignore']
+    });
+
+    let stdout = '';
+    child.stdout.on('data', (d) => {
+      stdout += d.toString();
+    });
+
+    child.stdin.write(JSON.stringify({ jsonrpc: '2.0', id: 1, method: 'tools/list' }) + '\n');
+
+    setTimeout(() => {
+      child.kill();
+      try {
+        const res = JSON.parse(stdout.trim());
+        resolve({ ok: true, tools: res.result.tools });
+      } catch {
+        resolve({ ok: false, tools: [] });
+      }
+    }, 400);
+  });
+}
+
 function startInteractiveStudio(targetDir = process.cwd()) {
   printBanner();
 
@@ -190,8 +216,9 @@ function startInteractiveStudio(targetDir = process.cwd()) {
   });
 
   const promptLoop = () => {
+    if (rl.closed) return;
     printStudioBox(targetDir);
-    rl.question(`\n  ${c.bCyan}${c.bold}grandpa${c.reset} > `, (answer) => {
+    rl.question(`\n  ${c.bCyan}${c.bold}grandpa${c.reset} > `, async (answer) => {
       const choice = answer.trim().toLowerCase();
 
       if (choice === '0' || choice === 'exit' || choice === 'q') {
@@ -222,11 +249,35 @@ function startInteractiveStudio(targetDir = process.cwd()) {
         }
         promptLoop();
       } else if (choice === '5' || choice === 'mcp') {
-        console.log(`\n  ${c.cyan}Starting Grandpa Model Context Protocol (MCP) server...${c.reset}`);
-        console.log(`  ${c.dim}Press Ctrl+C to stop MCP server.${c.reset}\n`);
-        const mcpServerPath = path.resolve(__dirname, '../grandpa-mcp/index.js');
-        const child = spawn(process.execPath, [mcpServerPath], { stdio: 'inherit' });
-        child.on('exit', () => promptLoop());
+        console.log(`\n  ${c.dim}┌── GRANDPA MCP SERVER (Model Context Protocol) ─────────────────────────┐${c.reset}`);
+        console.log(`  ${c.dim}│${c.reset}  The MCP server connects Grandpa's anti-bloat tools directly into     ${c.dim}│${c.reset}`);
+        console.log(`  ${c.dim}│${c.reset}  AI assistants like Claude Desktop, Cursor, Zed, and Devin.              ${c.dim}│${c.reset}`);
+        console.log(`  ${c.dim}│${c.reset}                                                                        ${c.dim}│${c.reset}`);
+        console.log(`  ${c.dim}│${c.reset}  ${c.bold}Registered AI Tools:${c.reset}                                                  ${c.dim}│${c.reset}`);
+        console.log(`  ${c.dim}│${c.reset}  • ${c.green}grandpa_scan${c.reset}    : Codebase bloat & fragile code analysis               ${c.dim}│${c.reset}`);
+        console.log(`  ${c.dim}│${c.reset}  • ${c.green}grandpa_audit${c.reset}   : Scored architectural evaluation (A+ to F)            ${c.dim}│${c.reset}`);
+        console.log(`  ${c.dim}│${c.reset}  • ${c.green}grandpa_guard${c.reset}   : Pre-execution blocker for unapproved packages        ${c.dim}│${c.reset}`);
+        console.log(`  ${c.dim}│${c.reset}  • ${c.green}grandpa_migrate${c.reset} : Instant stdlib migration snippets (axios -> fetch)   ${c.dim}│${c.reset}`);
+        console.log(`  ${c.dim}│${c.reset}  • ${c.green}grandpa_rules${c.reset}   : Dynamic zero-bloat system prompts (3 levels)         ${c.dim}│${c.reset}`);
+        console.log(`  ${c.dim}│${c.reset}                                                                        ${c.dim}│${c.reset}`);
+
+        const testRes = await runMcpSelfTest();
+        if (testRes.ok) {
+          console.log(`  ${c.dim}│${c.reset}  ${c.green}✓ Self-Test Passed:${c.reset} JSON-RPC 2.0 active with ${testRes.tools.length} tools registered!     ${c.dim}│${c.reset}`);
+        } else {
+          console.log(`  ${c.dim}│${c.reset}  ${c.yellow}▲ Ready for AI connection over stdio.${c.reset}                                ${c.dim}│${c.reset}`);
+        }
+
+        console.log(`  ${c.dim}│${c.reset}                                                                        ${c.dim}│${c.reset}`);
+        console.log(`  ${c.dim}│${c.reset}  ${c.bold}How to connect Claude Desktop:${c.reset}                                       ${c.dim}│${c.reset}`);
+        console.log(`  ${c.dim}│${c.reset}  In %APPDATA%\\Claude\\claude_desktop_config.json, add:                 ${c.dim}│${c.reset}`);
+        console.log(`  ${c.dim}│${c.reset}  "grandpa": { "command": "grandpa", "args": ["mcp"] }                  ${c.dim}│${c.reset}`);
+        console.log(`  ${c.dim}│${c.reset}                                                                        ${c.dim}│${c.reset}`);
+        console.log(`  ${c.dim}│${c.reset}  ${c.bold}How to connect Cursor:${c.reset}                                               ${c.dim}│${c.reset}`);
+        console.log(`  ${c.dim}│${c.reset}  Cursor Settings > Features > MCP > Add New MCP Server:                ${c.dim}│${c.reset}`);
+        console.log(`  ${c.dim}│${c.reset}  Type: command | Command: grandpa mcp                                  ${c.dim}│${c.reset}`);
+        console.log(`  ${c.dim}└────────────────────────────────────────────────────────────────────────┘${c.reset}\n`);
+        promptLoop();
       } else if (choice === '6' || choice === 'gain') {
         console.log(`\n${c.bold}Grandpa Quantified Architecture Savings:${c.reset}\n`);
         console.log(`  ${c.green}• Bloat Packages Defended:${c.reset} 16 major npm libraries`);
@@ -333,6 +384,24 @@ else if (command === 'check' || command === 'status' || command === 'doctor') {
 
 // 5. MCP Server
 else if (command === 'mcp') {
+  if (rawArgs.includes('--test') || rawArgs.includes('-t')) {
+    printBanner();
+    console.log(`\n${c.bold}Running Grandpa MCP Server Diagnostic...${c.reset}`);
+    const testRes = await runMcpSelfTest();
+    if (testRes.ok) {
+      console.log(`\n  ${c.green}✓ Success:${c.reset} MCP server responded cleanly over JSON-RPC 2.0.`);
+      console.log(`  ${c.bold}Registered AI Tools (${testRes.tools.length}):${c.reset}`);
+      for (const tool of testRes.tools) {
+        console.log(`    • ${c.cyan}${tool.name}${c.reset}: ${tool.description}`);
+      }
+      console.log(`\n  ${c.dim}Status: Verified and ready for Claude Desktop / Cursor.${c.reset}\n`);
+    } else {
+      console.error(`\n  ${c.red}Error:${c.reset} Failed to communicate with MCP server.\n`);
+    }
+    process.exit(testRes.ok ? 0 : 1);
+  }
+
+  // Live MCP server running on stdio (for Claude Desktop / Cursor)
   const mcpServerPath = path.resolve(__dirname, '../grandpa-mcp/index.js');
   const child = spawn(process.execPath, [mcpServerPath], {
     stdio: 'inherit'

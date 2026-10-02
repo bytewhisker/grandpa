@@ -122,15 +122,15 @@ if (command === 'mcp') {
   process.exit(0);
 } else {
   // Default: scan
-  const results = scanProject(process.cwd());
-
   if (args.includes('--json')) {
+    const results = scanProject(process.cwd());
     console.log(JSON.stringify(results, null, 2));
     process.exit(results.bloatFound.length > 0 && args.includes('--strict') ? 1 : 0);
   }
 
   printBanner();
-  console.log(`\n${c.bold}Target Directory:${c.reset} ${results.projectDir}`);
+  console.log(`\n${c.bold}Target Directory:${c.reset} ${process.cwd()}`);
+  const results = scanProject(process.cwd());
 
   if (!results.hasPackageJson) {
     console.log(`${c.yellow}[!] No package.json found in this directory.${c.reset}`);

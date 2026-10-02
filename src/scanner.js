@@ -182,23 +182,41 @@ export function scanProject(projectDir = process.cwd()) {
  * Scans source files recursively for common fragile AI patterns.
  */
 function scanSourceFiles(dir, results, depth = 0) {
-  if (depth > 6) return;
+  // If not a Node.js project (no package.json), only inspect files directly in the target directory
+  if (!results.hasPackageJson && depth > 0) return;
+  if (depth > 5) return;
+  if ((results.filesScanned || 0) >= 200) return;
 
-  const ignoreList = new Set(['node_modules', '.git', 'dist', 'build', '.next', 'out', 'coverage', '.cache', 'benchmarks', 'fixtures']);
+  const ignoreList = new Set([
+    'node_modules', '.git', 'dist', 'build', '.next', 'out', 'coverage', '.cache',
+    'benchmarks', 'fixtures', 'appdata', 'windows', 'program files', 'program files (x86)',
+    'library', 'applications', 'virtualbox vms', 'videos', 'music', 'pictures', 'downloads',
+    'appdata', '.gemini', '.cursor', '.vscode', '.npm', '.cargo', '.rustup', '.nuget', 'temp'
+  ]);
 
   try {
     const entries = fs.readdirSync(dir, { withFileTypes: true });
     for (const entry of entries) {
+      if ((results.filesScanned || 0) >= 200) return;
+
+      // Skip symlinks & junctions to prevent circular locks on Windows
+      if (entry.isSymbolicLink && entry.isSymbolicLink()) continue;
+
+      const lowerName = entry.name.toLowerCase();
+      // Skip hidden folders (.git, .vscode, .gemini, etc.) and ignored folders
+      if (entry.name.startsWith('.') || ignoreList.has(lowerName)) {
+        continue;
+      }
+
       if (entry.isDirectory()) {
-        if (!ignoreList.has(entry.name)) {
-          scanSourceFiles(path.join(dir, entry.name), results, depth + 1);
-        }
+        scanSourceFiles(path.join(dir, entry.name), results, depth + 1);
       } else if (entry.isFile() && /\.(js|ts|jsx|tsx|mjs)$/.test(entry.name)) {
+        results.filesScanned = (results.filesScanned || 0) + 1;
         checkFileContent(path.join(dir, entry.name), results);
       }
     }
   } catch {
-    // Ignore permissions
+    // Ignore permissions or inaccessible directories
   }
 }
 
